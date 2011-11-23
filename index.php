@@ -1,5 +1,6 @@
 <?
 session_start();
+echo "<br><br><br><h1>".exec("whoami")."</h1>";
 //////////////MODEL////////////////
 ///////////////////////////////////
 //include('PhpConsole.php');
@@ -10,7 +11,7 @@ $url = "x.png";
 $imagedata = file_get_contents($url);
 $base64 = base64_encode($imagedata);
 */
-
+$dl = "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTM5jWRgMAAAAVdEVYdENyZWF0aW9uIFRpbWUAMi8xNy8wOCCcqlgAAAQRdEVYdFhNTDpjb20uYWRvYmUueG1wADw/eHBhY2tldCBiZWdpbj0iICAgIiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+Cjx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDQuMS1jMDM0IDQ2LjI3Mjk3NiwgU2F0IEphbiAyNyAyMDA3IDIyOjExOjQxICAgICAgICAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp4YXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iPgogICAgICAgICA8eGFwOkNyZWF0b3JUb29sPkFkb2JlIEZpcmV3b3JrcyBDUzM8L3hhcDpDcmVhdG9yVG9vbD4KICAgICAgICAgPHhhcDpDcmVhdGVEYXRlPjIwMDgtMDItMTdUMDI6MzY6NDVaPC94YXA6Q3JlYXRlRGF0ZT4KICAgICAgICAgPHhhcDpNb2RpZnlEYXRlPjIwMDgtMDMtMjRUMTk6MDA6NDJaPC94YXA6TW9kaWZ5RGF0ZT4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgICAgIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICAgICAgICAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyI+CiAgICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2UvcG5nPC9kYzpmb3JtYXQ+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDUdUmQAAAE7SURBVDiNpZM7TsNAEIb/8WPNwwJKh5qGBiNxAiqa+AjQ5iCufQBaOILTUHEBIyEaGmoIVAkyEHshQ7HedSzbUiSvtNqZ0fzfzmhniZkxZFmD1AAcbRCRCQYpdZY1i9gk6cqdrkQAuD1n5H/K9m3g8p4683oBH7/AolT2vujLWgMEKaUAxtp/l8C8AizJ5OjWpgAiACDdy2hq8dVZs/XFd1XBTvPWmwfC23hFDQARIUiJL05qSP6lTn+3Ft89EWYR17p1gC7z9FjFlp8qtrWn/MdnMi/RC9CQwyPGaq5i1gHj9YU6n7EToCHbvrJ/8uYMbATQEKAtbgAqP2qpN1jMnOo5GGVZdu26LjzPgxACQgh4ngdmhpSytcMwnJgKkiRhKSWKokBZluYsSzVJjuPAtm2ztR/HMdHQ7/wPj7WgYLMWxPQAAAAASUVORK5CYII=";
 $drag = "iVBORw0KGgoAAAANSUhEUgAAAAYAAAAKCAQAAAA9B+e4AAAACXBIWXMAAAsTAAALEwEAmpwYAAADGGlDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjaY2BgnuDo4uTKJMDAUFBUUuQe5BgZERmlwH6egY2BmYGBgYGBITG5uMAxIMCHgYGBIS8/L5UBFTAyMHy7xsDIwMDAcFnX0cXJlYE0wJpcUFTCwMBwgIGBwSgltTiZgYHhCwMDQ3p5SUEJAwNjDAMDg0hSdkEJAwNjAQMDg0h2SJAzAwNjCwMDE09JakUJAwMDg3N+QWVRZnpGiYKhpaWlgmNKflKqQnBlcUlqbrGCZ15yflFBflFiSWoKAwMD1A4GBgYGXpf8EgX3xMw8BSMDVQYqg4jIKAUICxE+CDEESC4tKoMHJQODAIMCgwGDA0MAQyJDPcMChqMMbxjFGV0YSxlXMN5jEmMKYprAdIFZmDmSeSHzGxZLlg6WW6x6rK2s99gs2aaxfWMPZ9/NocTRxfGFM5HzApcj1xZuTe4FPFI8U3mFeCfxCfNN45fhXyygI7BD0FXwilCq0A/hXhEVkb2i4aJfxCaJG4lfkaiQlJM8JpUvLS19QqZMVl32llyfvIv8H4WtioVKekpvldeqFKiaqP5UO6jepRGqqaT5QeuA9iSdVF0rPUG9V/pHDBYY1hrFGNuayJsym740u2C+02KJ5QSrOutcmzjbQDtXe2sHY0cdJzVnJRcFV3k3BXdlD3VPXS8Tbxsfd99gvwT//ID6wIlBS4N3hVwMfRnOFCEXaRUVEV0RMzN2T9yDBLZE3aSw5IaUNak30zkyLDIzs+ZmX8xlz7PPryjYVPiuWLskq3RV2ZsK/cqSql01jLVedVPrHzbqNdU0n22VaytsP9op3VXUfbpXta+x/+5Em0mzJ/+dGj/t8AyNmf2zvs9JmHt6vvmCpYtEFrcu+bYsc/m9lSGrTq9xWbtvveWGbZtMNm/ZarJt+w6rnft3u+45uy9s/4ODOYd+Hmk/Jn58xUnrU+fOJJ/9dX7SRe1LR68kXv13fc5Nm1t379TfU75/4mHeY7En+59lvhB5efB1/lv5dxc+NH0y/fzq64Lv4T8Ffp360/rP8f9/AA0ADzT6lvFdAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAAtSURBVHjanMuxDQAgDMTAC0Oxf52lnjaIDneW5Qo67GIZVIZcZUGn85Sf5wwAW6wMMxeHNEAAAAAASUVORK5CYII=";
 $gears = "iVBORw0KGgoAAAANSUhEUgAAABEAAAAoCAYAAAFvHyEJAAABc0lEQVRIx+2Vu0pDQRCGz0NYiCAasNAiKHiBECIkYhERG8EnU/gUbDyWXt7DwjSKErCwsdEUGrwnWZt/k3XPhughiJAUw87O/PvP7JyZPZExJrISJTaACW8SZzoKYADTUYIBeht1Phz4d5xpDMAi8CYp2HwmgXF7wSzwKcn1I+yP75gepJrO29pqnQMSoBZwB4wCNxbsg4ycI8BFN1DRC5f/BvrjEgwAQGWe0BoDx9KngDagLjGSR/V7G5CTYxNYk75iATUZngWOHLaaNSzLsAoUpJfdEPeKaXN4BZ5cwLTWA+BIehYYlK/Zt+4fkqQkcfrblz117WE3jE8yBlTU4nlgFjgXySWwoF/PA3ANZEIkEVACPpy5aWkSm46tqbFNZLIN7ANnDnjLS73s+CrC77gkMXDqPPsG2PBISo7vCjgB4tB1loAXL/U60HBsDREGC5sBqsA7sK6Hx2ZW1bNVVOFvgZluhfVlVyRxz088nJ1/SvIFJGxMewwj+XUAAAAASUVORK5CYII=";
 $x = "iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzdFQ0RFMzZEMTdEMTFFMEIwNzJBMzg5RjQxMTQyNjEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzdFQ0RFMzdEMTdEMTFFMEIwNzJBMzg5RjQxMTQyNjEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpFM0VDNzE2OUQxN0MxMUUwQjA3MkEzODlGNDExNDI2MSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpFM0VDNzE2QUQxN0MxMUUwQjA3MkEzODlGNDExNDI2MSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pk6j2R0AAAB/SURBVHjaYkxLS9vPwMCwcNasWQuANAOQLwCk5gPxRhYgAeYABUFyG4AYpNgApIEJSDgC8QWo6vNQiUSgSRsYoUYpAKn7DBCwACiRCGIwQ+3YDsQSQPwAiB2MjY0fnj179gITkh0g1YYwK4CaAkCSH6B2gIz7AHUDyGECAAEGACoZKiO+Ukh+AAAAAElFTkSuQmCC";
@@ -72,9 +73,8 @@ $pass = false;
 if((checkSlash($_REQUEST['pw'])==$pw) || checkSlash($_SESSION['pw']) == $pw){
     $_SESSION['pw'] = $pw;
     $pass = true;
-
-$view = checkSlash($_REQUEST['view']);
-$_REQUESTarray = $_REQUEST['array'];
+	$view = checkSlash($_REQUEST['view']);
+	$_REQUESTarray = $_REQUEST['array'];
 }
 $view = $view == "" ? "view" : $view;
 
@@ -88,11 +88,19 @@ if($view == "edit" && $pw == ""){
 	$current = str_replace("\$pw = \"\";", "\$pw = \"".$_REQUEST['pw']."\";", $current); 
 	file_put_contents($filename, $current);
 }
-if($view == "edit" && !$pass):
-    $view = "view";
+
+if($pass && $_REQUEST['download']):
+		$file = str_replace('/', '', $_GET['download']);
+		$file = str_replace('..', '', $file);
+		$file = "index.php";
+		if (file_exists($file)) {
+			header("Content-type: application/x-download");
+			header("Content-Length: ".filesize($file)); 
+			header('Content-Disposition: attachment; filename="'.$file.'"');
+			readfile($file);
+			die();
+		}
 endif;
-
-
 
 
 function checkSlash($string){
@@ -418,7 +426,11 @@ function rhtmlspecialchars(str) {
 			</script>
 				<style type="text/css">
 
-
+					#download{
+						position:absolute;
+						top:10px;
+						left:50%;
+					}
 					*{
 						padding:0px;
 						margin:0px;
@@ -490,7 +502,7 @@ function rhtmlspecialchars(str) {
 						padding-bottom:10px;
 						position:absolute; 
 						top:13px;
-						right:125px;
+						right:130px;
                     }
 					.background
 					{
@@ -571,6 +583,10 @@ function rhtmlspecialchars(str) {
 		//return false;	
 		}
 <?else:?>
+
+		$("#gearLink").attr("href", "?download=true");
+		$("#gearImg").attr("src","data:image/png;base64,<?echo$dl;?>").css("padding-top","14px");
+		
 		function sortHelper(thing, i){
 			$(thing).children().each(function(index2){
 				if(index2>0){
@@ -741,9 +757,8 @@ function rhtmlspecialchars(str) {
 				});
 			} 
 		}); 
-		gearClick = function(){
-			window.location = "";
-		}
+		
+
 		setDelete();
 		makeEdit();
 		$('#Font').editable(function(value, settings) { 
@@ -952,7 +967,7 @@ echo$keyArrayString;
 	                        submitdata : {view: "ajax"}
                         });
                     });
-                }
+                };
 			</script>
 			<script type="text/javascript">
 						//GOOGLE ANALYTICS FOR SIVI.ME
@@ -972,7 +987,7 @@ echo$keyArrayString;
 		<div class="header">
 		<div class="headerB">
 		<div class="headerC">
-		<span id="gear"><a href="javascript:gearClick();"><img src='data:image/png;base64,<?echo$gears;?>'></a></span>
+		<span id="gear"><a id="gearLink" href="javascript:gearClick();"><img id="gearImg" src='data:image/png;base64,<?echo$gears;?>'></a></span>
 		<?if($view=="edit"):?>
 		<span class="background" name="Background" id="Background" style="color:<?echo$Background;?>"><?echo$Background;?></span>
 		<span class="font" name="Font" id="Font"><?echo$Font;?></span>
@@ -1038,10 +1053,17 @@ echo$keyArrayString;
 		?>
 		</div>
 		</div>
-		<?if($view == "view"):?>
+<?if($view == "view"):?>
 
 <?else:?>
+<script>
+$(document).ready(function(){
 
+	$("#infoButton").click(function(){
+		window.location="";
+	});
+});
+</script>
 <?endif;?>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
