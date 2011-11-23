@@ -82,7 +82,7 @@ if($view == "edit" && $pw == ""){
 	
 	$filename = "index.php";
 	$current = file_get_contents($filename);
-
+	$_SESSION['pw'] = $_REQUEST['pw'];
 	//replace old info with new info and save file
 	$current = str_replace("\$pw = \"\";", "\$pw = \"".$_REQUEST['pw']."\";", $current); 
 	file_put_contents($filename, $current);
