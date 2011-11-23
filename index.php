@@ -1,6 +1,5 @@
 <?
 session_start();
-echo "<br><br><br><h1>".exec("whoami")."</h1>";
 //////////////MODEL////////////////
 ///////////////////////////////////
 //include('PhpConsole.php');
