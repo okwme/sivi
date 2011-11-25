@@ -1,93 +1,42 @@
 <?
 session_start();
-//////////////MODEL////////////////
-///////////////////////////////////
-//include('PhpConsole.php');
-//PhpConsole::start();
-
-/*
-$url = "x.png";
-$imagedata = file_get_contents($url);
-$base64 = base64_encode($imagedata);
-*/
 $dl = "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTM5jWRgMAAAAVdEVYdENyZWF0aW9uIFRpbWUAMi8xNy8wOCCcqlgAAAQRdEVYdFhNTDpjb20uYWRvYmUueG1wADw/eHBhY2tldCBiZWdpbj0iICAgIiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+Cjx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDQuMS1jMDM0IDQ2LjI3Mjk3NiwgU2F0IEphbiAyNyAyMDA3IDIyOjExOjQxICAgICAgICAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp4YXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iPgogICAgICAgICA8eGFwOkNyZWF0b3JUb29sPkFkb2JlIEZpcmV3b3JrcyBDUzM8L3hhcDpDcmVhdG9yVG9vbD4KICAgICAgICAgPHhhcDpDcmVhdGVEYXRlPjIwMDgtMDItMTdUMDI6MzY6NDVaPC94YXA6Q3JlYXRlRGF0ZT4KICAgICAgICAgPHhhcDpNb2RpZnlEYXRlPjIwMDgtMDMtMjRUMTk6MDA6NDJaPC94YXA6TW9kaWZ5RGF0ZT4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgICAgIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICAgICAgICAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyI+CiAgICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2UvcG5nPC9kYzpmb3JtYXQ+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDUdUmQAAAE7SURBVDiNpZM7TsNAEIb/8WPNwwJKh5qGBiNxAiqa+AjQ5iCufQBaOILTUHEBIyEaGmoIVAkyEHshQ7HedSzbUiSvtNqZ0fzfzmhniZkxZFmD1AAcbRCRCQYpdZY1i9gk6cqdrkQAuD1n5H/K9m3g8p4683oBH7/AolT2vujLWgMEKaUAxtp/l8C8AizJ5OjWpgAiACDdy2hq8dVZs/XFd1XBTvPWmwfC23hFDQARIUiJL05qSP6lTn+3Ft89EWYR17p1gC7z9FjFlp8qtrWn/MdnMi/RC9CQwyPGaq5i1gHj9YU6n7EToCHbvrJ/8uYMbATQEKAtbgAqP2qpN1jMnOo5GGVZdu26LjzPgxACQgh4ngdmhpSytcMwnJgKkiRhKSWKokBZluYsSzVJjuPAtm2ztR/HMdHQ7/wPj7WgYLMWxPQAAAAASUVORK5CYII=";
 $drag = "iVBORw0KGgoAAAANSUhEUgAAAAYAAAAKCAQAAAA9B+e4AAAACXBIWXMAAAsTAAALEwEAmpwYAAADGGlDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjaY2BgnuDo4uTKJMDAUFBUUuQe5BgZERmlwH6egY2BmYGBgYGBITG5uMAxIMCHgYGBIS8/L5UBFTAyMHy7xsDIwMDAcFnX0cXJlYE0wJpcUFTCwMBwgIGBwSgltTiZgYHhCwMDQ3p5SUEJAwNjDAMDg0hSdkEJAwNjAQMDg0h2SJAzAwNjCwMDE09JakUJAwMDg3N+QWVRZnpGiYKhpaWlgmNKflKqQnBlcUlqbrGCZ15yflFBflFiSWoKAwMD1A4GBgYGXpf8EgX3xMw8BSMDVQYqg4jIKAUICxE+CDEESC4tKoMHJQODAIMCgwGDA0MAQyJDPcMChqMMbxjFGV0YSxlXMN5jEmMKYprAdIFZmDmSeSHzGxZLlg6WW6x6rK2s99gs2aaxfWMPZ9/NocTRxfGFM5HzApcj1xZuTe4FPFI8U3mFeCfxCfNN45fhXyygI7BD0FXwilCq0A/hXhEVkb2i4aJfxCaJG4lfkaiQlJM8JpUvLS19QqZMVl32llyfvIv8H4WtioVKekpvldeqFKiaqP5UO6jepRGqqaT5QeuA9iSdVF0rPUG9V/pHDBYY1hrFGNuayJsym740u2C+02KJ5QSrOutcmzjbQDtXe2sHY0cdJzVnJRcFV3k3BXdlD3VPXS8Tbxsfd99gvwT//ID6wIlBS4N3hVwMfRnOFCEXaRUVEV0RMzN2T9yDBLZE3aSw5IaUNak30zkyLDIzs+ZmX8xlz7PPryjYVPiuWLskq3RV2ZsK/cqSql01jLVedVPrHzbqNdU0n22VaytsP9op3VXUfbpXta+x/+5Em0mzJ/+dGj/t8AyNmf2zvs9JmHt6vvmCpYtEFrcu+bYsc/m9lSGrTq9xWbtvveWGbZtMNm/ZarJt+w6rnft3u+45uy9s/4ODOYd+Hmk/Jn58xUnrU+fOJJ/9dX7SRe1LR68kXv13fc5Nm1t379TfU75/4mHeY7En+59lvhB5efB1/lv5dxc+NH0y/fzq64Lv4T8Ffp360/rP8f9/AA0ADzT6lvFdAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAAtSURBVHjanMuxDQAgDMTAC0Oxf52lnjaIDneW5Qo67GIZVIZcZUGn85Sf5wwAW6wMMxeHNEAAAAAASUVORK5CYII=";
 $gears = "iVBORw0KGgoAAAANSUhEUgAAABEAAAAoCAYAAAFvHyEJAAABc0lEQVRIx+2Vu0pDQRCGz0NYiCAasNAiKHiBECIkYhERG8EnU/gUbDyWXt7DwjSKErCwsdEUGrwnWZt/k3XPhughiJAUw87O/PvP7JyZPZExJrISJTaACW8SZzoKYADTUYIBeht1Phz4d5xpDMAi8CYp2HwmgXF7wSzwKcn1I+yP75gepJrO29pqnQMSoBZwB4wCNxbsg4ycI8BFN1DRC5f/BvrjEgwAQGWe0BoDx9KngDagLjGSR/V7G5CTYxNYk75iATUZngWOHLaaNSzLsAoUpJfdEPeKaXN4BZ5cwLTWA+BIehYYlK/Zt+4fkqQkcfrblz117WE3jE8yBlTU4nlgFjgXySWwoF/PA3ANZEIkEVACPpy5aWkSm46tqbFNZLIN7ANnDnjLS73s+CrC77gkMXDqPPsG2PBISo7vCjgB4tB1loAXL/U60HBsDREGC5sBqsA7sK6Hx2ZW1bNVVOFvgZluhfVlVyRxz088nJ1/SvIFJGxMewwj+XUAAAAASUVORK5CYII=";
 $x = "iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzdFQ0RFMzZEMTdEMTFFMEIwNzJBMzg5RjQxMTQyNjEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzdFQ0RFMzdEMTdEMTFFMEIwNzJBMzg5RjQxMTQyNjEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpFM0VDNzE2OUQxN0MxMUUwQjA3MkEzODlGNDExNDI2MSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpFM0VDNzE2QUQxN0MxMUUwQjA3MkEzODlGNDExNDI2MSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pk6j2R0AAAB/SURBVHjaYkxLS9vPwMCwcNasWQuANAOQLwCk5gPxRhYgAeYABUFyG4AYpNgApIEJSDgC8QWo6vNQiUSgSRsYoUYpAKn7DBCwACiRCGIwQ+3YDsQSQPwAiB2MjY0fnj179gITkh0g1YYwK4CaAkCSH6B2gIz7AHUDyGECAAEGACoZKiO+Ukh+AAAAAElFTkSuQmCC";
-$pw = "";
-$Font = "Arial";
-//F5FCCB
+$link = "R0lGODlhEAAQAIABACBRZv///yH5BAEAAAEALAAAAAAQABAAAAIgjI+py+0GIngwKjkDvkhqXmWLaDXicXbgijLYRsVyXAAAOw==";
+
+$pw = "boner";
 $Background = "#F5FCCB";
-$Name = "";
-$Address = "";
-$City = "";
-$State = "";
-$Zip = "";
-$Country = "";
-$Phone = "";
-$Email = "";
-$Homepage = "";
-$degrees=array();
-$grants=array();
-$soloShows=array();
-$groupShows=array();
-$publications=array();
-$collections=array();
-$bibliographys=array();
-$employments=array();
-$galleries=array();
-$notes=array();
-
-
-$infoArray=array(
-"degrees"=>$degrees
-,"grants"=>$grants
-,"soloShows"=>$soloShows
-,"groupShows"=>$groupShows
-,"publications"=>$publications
-,"collections"=>$collections
-,"bibliographys"=>$bibliographys
-,"employments"=>$employments
-,"galleries"=>$galleries	
-,"notes"=>$notes	
-);
-$infoCopy=array(
-"degrees"=>array("Education", "Degree", "Dates", "Major", "Institution")
-,"grants"=>array("Grants & Awards","Year","Title")
-,"soloShows"=>array("Solo & Partner Exhibitions","Year", "Title","Location","City","Country")
-,"groupShows"=>array("Group Exhibitions","Year","Title","Location","City","Country")
-,"publications"=>array("Publications","Year","Title","Publisher","City","Country")
-,"collections"=>array("Collections", "Name", "Location")
-,"bibliographys"=>array("Bibliography", "Author", "Title","Publication","Date")
-,"employments"=>array("Employment","Title","Company","Location")
-,"galleries"=>array("Gallery Representation","Name","Location")
-,"notes"=>array("Notes","Notes")
-);
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////CONTROLLER///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+$Font = "Helvetica Neue";
 $pass = false;
-if((checkSlash($_REQUEST['pw'])==$pw) || checkSlash($_SESSION['pw']) == $pw){
+if(($_REQUEST['pw']==$pw) || $_SESSION['pw']==$pw){
     $_SESSION['pw'] = $pw;
     $pass = true;
-	$view = checkSlash($_REQUEST['view']);
-	$_REQUESTarray = $_REQUEST['array'];
+	$view = $_REQUEST['view'];
 }
 $view = $view == "" ? "view" : $view;
-
 if($view == "edit" && $pw == ""){
-	$pass = true;
-	
+	$pass = true;	
 	$filename = "index.php";
 	$current = file_get_contents($filename);
 	$_SESSION['pw'] = $_REQUEST['pw'];
 	//replace old info with new info and save file
-	$current = str_replace("\$pw = \"\";", "\$pw = \"".$_REQUEST['pw']."\";", $current); 
+	$current = str_replace("\$pw = \"\";", "\$pw = \"".addslashes(stripslashes($_REQUEST['pw']))."\";", $current); 
 	file_put_contents($filename, $current);
 }
+if(($_REQUEST['id']!="") && $pass):
+	$filename = "index.php";
+	$current = file_get_contents($filename);
+	$view = "none";
+	$id = ($_REQUEST['id']);
+	$value = str_replace(">", "",  str_replace("<", "", $_REQUEST['value']));  
+	$value = htmlspecialchars(str_replace("\\", "", $_REQUEST['value']));
+	$current = str_replace("\$$id = \"".${$id}."\";", "\$$id = \"".$value."\";", $current);
+	file_put_contents($filename, $current);
 
+	die;
+endif; 
 if($pass && $_REQUEST['download']):
 		$file = str_replace('/', '', $_GET['download']);
 		$file = str_replace('..', '', $file);
@@ -100,216 +49,93 @@ if($pass && $_REQUEST['download']):
 			die();
 		}
 endif;
+function unstrip_array($array){
+	foreach($array as &$val){
+		if(is_array($val)){
+			$val = unstrip_array($val);
+		}else{
+			$val = stripslashes($val);
+		}
+	}
+	return $array;
+}
+if(!empty($_REQUEST["newJSON"]) && $pass){
+	
+	$filename = "index.php";
+	$current = file_get_contents($filename);
+	
+	$start = strrpos($current, "var jayson");
+	$end = strrpos($current, "}];");
+	$source = substr($current, $start, ($end-$start+3));
+	//echo "starts at ".$start." ends at ".$end."\n";
+	//echo "RESULT IS :".$source;
+	
+	$json =  unstrip_array($_REQUEST["newJSON"]);
+	$json = json_encode($json);
+	$newJSON = "var jayson = ".$json.";";
+	//replace old info with new info and save file
+	$current = $json != null ? str_replace($source, $newJSON, $current): $current; 
+	file_put_contents($filename, $current);
 
-
-function checkSlash($string){
-	return addslashes(stripslashes($string));
+	die;
 }
 
-if($_REQUESTarray != ""):
-//THIS IS TO REORDER AN ARRAY
-	$newOrder = is_array($_REQUEST['order']) ? $_REQUEST['order'] : array();
-	$arrayName = checkSlash($_REQUEST['array']);
-	$target = $infoArray[$arrayName];
-	
-	//build text of array to replace
-	$targetArrays = $target;
-	$targetText = "";
-	$targetText.="\$$arrayName=array(\n";
-	foreach($targetArrays as $targetArray):
-		$targetText.="array(\n";
-		foreach($targetArray as $k=>$v):
-			$targetText.="\"$k\"=>\"$v\"\n,";
-		endforeach;
-		$targetText=substr($targetText, 0, -1).")\n,";    
-	endforeach;
-	$targetText=substr($targetText, 0, -1);
-	$targetText .=");";
-	
-	//create model for new array
-	foreach($newOrder as $k=>$v):
-		$newO = explode("_", $v);
-		$newO = $newO[1];
-		$newOrder[$k] = $newO;	
-	endforeach;
-	//echo"BEFORE:\n";
-	//print_r($target);
-	//echo"GOAL:\n";
-	//print_r($newOrder);
+header('Content-type: text/html; charset=utf-8');?><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title class="name"></title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+<script>
+var jayson = [{"header":"Name","data":[["Address"],["City, State ZIP"],["Email"],["<a href=\"\" target=\"_blank\">website<\/a>"]]},{"header":"Degrees","data":[["Degree","Year","Major","Institution"]]},{"header":"Grants & Awards","data":[["Year","Title"]]},{"header":"Solo & Partner Shows","data":[["Year","Title","Location","City","Country"]]},{"header":"Group Shows","data":[["Year","Title","Location","City","Country"]]},{"header":"Books & Publications","data":[["Year","Title","Publisher","City","Country"]]},{"header":"Bibliography","data":[["Author","Title","fourninetyone.com","2011"],["Landon Zakheim ","Re-Defining Short Docs","Sundance Film Festival","2011"],["Joachim Lepastier","Un an de vid\u00e9os sur Internet","Cahiers du Cinema \/ N\u00b0662","2011"],["VVORK","A vs B","vvork.com","2010"],["Ceci Moss","1 Question Interview with Billy Rennekamp","rhizome.org","2010"],["Catherine Cochard","Loshadka jusqu\u2019au ","Ars brevis vita longa","2010"],["VVORK","multiplex","vvork.com","2010"],["Annette Hoffmann","Das Netzwerk als Kunstwerk","Artline Kunstmagazin ","2010"],["Karen Archey","Best Link Ever! Centaurs with Tri-Titted Babes and Slim Thug","Art Fag City","2009"],["VVORK","AFK Sculpture Park","vvork.com","2009"],["Ceci Moss","HUGE (2008)","rhizome.org","2009"],["Matthew Rodriguez","Billy Rennekamp, \u201cClover\"","SundanceChannel.com","2009"],["VVORK","Clover","vvork.com","2009"],["John Michael Boling","Shine II (2009)","Rhizome.org","2009"],["Brian Droitcour &amp; Ceci Moss","\u201dIn Real Life\u201d at Capricious Space : A Conversation","rhizome.org","2009"],["Raphael Bastide","Surfin Clubs: Liste non exhaustive des blogs d\u2019art collaboratif"," Ca mange pas de pain","2009"],["Brian Droitcour","Members Only: Loshadka Surfs the Web","Art In America","2009"],["Will","Art Revue: Loshadka at Light Industry","Brooklyn Revue","2009"],["John Michael Boling","There it is (2008)","rhizome.org","2009"],["Marcin Ramocki","Surfing Clubs: organized notes and comments","www","2008"],["Paddy Johnson","Worth Checking Out: Loshadka","Art Fag City","2008"],["John Michael Boling","THIS IS NEVER GOING TO STOP (2007)","rhizome.org","2008"],["Marisa Olson","Lost Not Found: The Circulation of Images in Digital Visual Culture","Words Without Pictures","2007"]]},{"header":"Employment","data":[["Artist Assitant","Raymond Pettibon LLC","New York, NY"],["Intern","Dis Magazine","New York, NY"],["Artist Assistant","JODI","Dortrecht, NL"],["Intern","Art Since the Dummer of '69","New York, NY"],["Intern","JODI","Dordrecht, NL"],["Artist Assistant","AIDS-3D","Berlin, DE"],["Intern","Oliver Laric","Berlin, DE"],["Intern","Cory Arcangel","New York, NY"],["Intern","Rhizome.org","New York, NY"]]},{"header":"Notes","data":[["\u2020 denotes work shown as collective Loshadka"]]}];
 
+		(function($){
 
-	$freshStart = array();
+			// Custom version of jQuery autoGrowInput by billy rennekamp
+			// Based on jQuery autoGrowInput plugin by James Padolsey
+			// See related thread: http://stackoverflow.com/questions/931207/is-there-a-jquery-autogrow-plugin-for-text-fields
 
-	for($i=0;$i<count($newOrder);$i++):
-			$freshStart[] = $target[$newOrder[$i]];
-	endfor;
-	$replaceArrays = $freshStart;
-	
-	
-	//echo"AFTER:\n";
-	//print_r($replaceArrays);
-
-	//build text of new array
-	$replaceText = "";
-	$replaceText.="\$$arrayName=array(\n";
-	foreach($replaceArrays as $replaceArray):
-		$replaceText.="array(\n";
-		foreach($replaceArray as $k=>$v):
-			$replaceText.="\"$k\"=>\"$v\"\n,";
-		endforeach;
-		$replaceText=substr($replaceText, 0, -1).")\n,";    
-	endforeach;
-	$replaceText=substr($replaceText, 0, -1);
-	$replaceText .=");";
-	
-	$filename = "index.php";
-	$current = file_get_contents($filename);
-	$view = "none";
-
-	//replace old info with new info and save file
-	$current = str_replace($targetText, $replaceText, $current); 
-	file_put_contents($filename, $current);
-	die("finished");
-endif;
-
-
-
-
-
-
-if(($_REQUEST['id']!="") && $pass):
-
-	$filename = "index.php";
-	$current = file_get_contents($filename);
-	$view = "none";
-	$id = ($_REQUEST['id']);
-	$value = str_replace(">", "",  str_replace("<", "", $_REQUEST['value']));  
-	$value = htmlspecialchars(str_replace("\\", "", $_REQUEST['value']));
-	
-	if (strpos($id, "_") === false):
-		$current = str_replace("\$$id = \"".${$id}."\";", "\$$id = \"".$value."\";", $current); 
-	else:
-	    $id = explode("_", $id);
-	    $arrayName = $id[0];
-	    $arrayId = $id[1];
-	    $arrayKey = $id[2];
-
-	    $targetArrays = $infoArray[$arrayName];
-
-	    $targetText = "";
-	    $targetText.="\$$arrayName=array(\n";
-	    foreach($targetArrays as $targetArray):
-	        $targetText.="array(\n";
-	        foreach($targetArray as $k=>$v):
-	            $targetText.="\"$k\"=>\"$v\"\n,";
-	        endforeach;
-	        $targetText=substr($targetText, 0, -1).")\n,";     
-	    endforeach;
-	    $targetText=substr($targetText, 0, -1);
-	    $targetText .=");\n";
-
-	    $newText = "";
-	    $newText.="\$$arrayName=array(\n";
-	    $deleted = "no";
-	    foreach($targetArrays as $key=>$targetArray):
-			if($arrayId == "delete" && $key==$arrayKey&& $deleted = "no"):
-				//echo "deleted = $deleted\narrayID = $arrayId\nkey = $key\narrayKey = $arrayKey\n\n";
-			    $deleted = "yes";
-			    continue;
-			endif;
-	        $newText.="array(\n";
-	        foreach($targetArray as $k=>$v):
-	          //  echo "key = $key<br>arrayKey = $arrayKey<br>k = $k<br>arrayID = $arrayId<hr>";
-	            $newText.= $key==$arrayKey && $k==$arrayId && $arrayKey !="new"? "\"$k\"=>\"$value\"\n," : "\"$k\"=>\"$v\"\n,";
-	        endforeach;
-	        $newText=substr($newText, 0, -1).")\n,";
-	    endforeach;
-		if($arrayKey == "new"):
-		 	$newText.="array(\n";
-	        foreach($infoCopy[$arrayName] as $k=>$v):
-				if($k == 0):continue;endif;
-	          //  echo "key = $key<br>arrayKey = $arrayKey<br>k = $k<br>arrayID = $arrayId<hr>";
-	            $newText.= $v==$arrayId ? "\"$v\"=>\"$value\"\n," : "\"$v\"=>\"\"\n,";
-	        endforeach;
-	        $newText=substr($newText, 0, -1).")\n,";
-		endif;
-	    $newText=substr($newText, 0, -1);
-	    $newText .=");\n";
-		$current = str_replace($targetText, $newText, $current); 
-    
-	endif;
-	echo stripslashes($value);
-	//$current = $base64.$current;
-	file_put_contents($filename, $current);
-	
-	
-	
-	
-	
-	
-	
-	
-///////////////////////////////////
-//////////////VIEW/////////////////
-///////////////////////////////////
-else:
-header('Content-type: text/html; charset=utf-8');
-
-?>
-	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
-	<html>
-		<head>
-			<title class="name"><?echo$name;?></title>
-			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
-			<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
-		   <script>
-(function($){
-    
-    // Custom version of jQuery autoGrowInput by billy rennekamp
-	// Based on jQuery autoGrowInput plugin by James Padolsey
-    // See related thread: http://stackoverflow.com/questions/931207/is-there-a-jquery-autogrow-plugin-for-text-fields
-        
-        $.fn.autoGrowInput = function(o) {
-            o = $.extend({
-                maxWidth: 1000,
-                minWidth: 0,
-                comfortZone: 20
-            }, o);    
-            this.filter('input:text').each(function(){
-                var minWidth = o.minWidth || $(this).width(),
-                    val = '',
-                    input = $(this),
-                    testSubject = $('<tester/>').css({
-                        position: 'absolute',
-                        top: -9999,
-                        left: -9999,
-                        width: 'auto',
-                        fontSize: "9pt",
-                        fontFamily: "arial",
-                        whiteSpace: 'nowrap'
-                    }),
-                    check = function() {
-                        if (val === (val = input.val())) {return;}
-                        var escaped = val.replace(/&/g, '&amp;').replace(/\s/g,'&nbsp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-                        testSubject.html(escaped);   
-                        // Calculate new width + whether to change
-                        var testerWidth = testSubject.width(),
-                            newWidth = (testerWidth + o.comfortZone) >= minWidth ? testerWidth + o.comfortZone : minWidth,
-                            currentWidth = input.width(),
-                            isValidWidthChange = (newWidth < currentWidth && newWidth >= minWidth)
-                                                 || (newWidth > minWidth && newWidth < o.maxWidth);
-                        // Animate width
-                        if (isValidWidthChange) {
-                            input.width(newWidth);
-                        }                        
-                    };
-                 $("body").append(testSubject);                 
-                $(this).bind('keyup keydown blur update', check);
-            });  
-            return this;
-        };
-    })(jQuery);
-			/*
+			$.fn.autoGrowInput = function(o) {
+				o = $.extend({
+					maxWidth: 1000,
+					minWidth: 0,
+					comfortZone: 20
+					}, o);    
+					this.filter('input:text').each(function(){
+						var minWidth = o.minWidth || $(this).width(),
+						val = '',
+						input = $(this),
+						testSubject = $('<tester/>').css({
+							position: 'absolute',
+							top: -9999,
+							left: -9999,
+							width: 'auto',
+							fontSize: "9pt",
+							fontFamily: "arial",
+							whiteSpace: 'nowrap'
+							}),
+							check = function() {
+								if (val === (val = input.val())) {return;}
+								var escaped = val.replace(/&/g, '&amp;').replace(/\s/g,'&nbsp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+								testSubject.html(escaped);   
+								// Calculate new width + whether to change
+								var testerWidth = testSubject.width(),
+								newWidth = (testerWidth + o.comfortZone) >= minWidth ? testerWidth + o.comfortZone : minWidth,
+								currentWidth = input.width(),
+								isValidWidthChange = (newWidth < currentWidth && newWidth >= minWidth)
+								|| (newWidth > minWidth && newWidth < o.maxWidth);
+								// Animate width
+								if (isValidWidthChange) {
+									input.width(newWidth);
+								}                        
+							};
+							$("body").append(testSubject);                 
+							$(this).bind('keyup keydown blur update', check);
+						});  
+						return this;
+					};
+					})(jQuery);
+								/*
 			 * Jeditable - jQuery in place edit plugin
 			 * Copyright (c) 2006-2009 Mika Tuupola, Dylan Verheul
 			 * Licensed under the MIT license:
@@ -376,181 +202,234 @@ header('Content-type: text/html; charset=utf-8');
 			var option=$('<option />').val(key).append(json[key]);$('select',this).append(option);}
 			$('select',this).children().each(function(){if($(this).val()==json['selected']||$(this).text()==$.trim(original.revert)){$(this).attr('selected','selected');}});}}},addInputType:function(name,input){$.editable.types[name]=input;}};$.fn.editable.defaults={name:'value',id:'id',type:'text',width:'auto',height:'auto',event:'click.editable',onblur:'cancel',loadtype:'GET',loadtext:'Loading...',placeholder:'Click to edit',loaddata:{},submitdata:{},ajaxoptions:{}};})(jQuery);
 			
-			$.editable.addInputType('noMal', {
-			    element:function(settings,original){
-			       //console.log("settings:");console.log(settings);console.log("original:");console.log(original);
-			        var input = $('<input type="text">').autoGrowInput();
-			        $(this).append(input);
-                    return(input);
-			    },
-			    content : function(string, settings, original) { 
-			      //  console.log(string);
-					string = rhtmlspecialchars(string);
-			     //   string =  string.replace( /\&amp;/g, '&' );
-				//	string = string.replace(/\, "");
-			        $(this).children().val(string);
-			      //  console.log("string");console.log(string);console.log("settings:");console.log(settings);console.log("original:");console.log(original);
-                },
-			    submit:function(settings, original){
-			      // console.log("settings:");console.log(settings);console.log("original:");console.log(original); 
-			        $("input", this).val($("input", this).val());
+<?if( $view == "edit"):?>
+$.editable.addInputType('noMal', {
+	element:function(settings,original){
+		var input = $('<input type="text">').autoGrowInput();
+		//var input = $('<input type="text">');
+		$(this).append(input);
+		return(input);
+	},
+	content : function(string, settings, original) { 
+		string = rhtmlspecialchars(string);
+		$(this).children().val(string);
+	},
+	submit:function(settings, original){
+		$("input", this).val($("input", this).val());
 
-			    }
-		    });
+	}
+});
 function rhtmlspecialchars(str) {
- if (typeof(str) == "string") {
-  str = str.replace(/&gt;/ig, ">");
-  str = str.replace(/&lt;/ig, "<");
-  str = str.replace(/&#039;/g, "'");
-  str = str.replace(/&quot;/ig, '"');
-  str = str.replace(/&amp;/ig, '&'); /* must do &amp; last */
-  }
- return str;
- }
-			</script>
-				<style type="text/css">
+	if (typeof(str) == "string") {
+		str = str.replace(/&gt;/ig, ">");
+		str = str.replace(/&lt;/ig, "<");
+		str = str.replace(/&#039;/g, "'");
+		str = str.replace(/&quot;/ig, '"');
+		str = str.replace(/&amp;/ig, '&'); /* must do &amp; last */
+	}
+	return str;
+}
+function update(callbackFnk){
+	var newJayson = [];
+	$("#sivi").children().each(function(k, v){
+		newJayson[k] = {"header":$(this).attr("id"), "data":[]};
+		$(v).children("li").each(function(kk, vv){
+			newJayson[k].data[kk] = [];
+			$(vv).children().children(".field").each(function(kkk,vvv){
+				newJayson[k].data[kk].push($(vvv).html());			
+			});
+		});
+	});
+	$.post("index.php", {newJSON:newJayson}, function(data){
+		console.log(data);
+	});
+	jayson = newJayson;	
+	if(typeof callbackFnk == 'function'){
+		callbackFnk.call(this, newJayson);
+	}
+}
+function refresh() {
+//sivi div to hold all
+var sivi = $("<ul>").attr("id", "sivi").sortable({
+handle:".bigHandle",
+items:"ul",
+update:function(){update();}
+});
+$(jayson).each(function(kkkk,vvvv){
+//ul of items to be sortable
+var hDiv = $("<ul>").attr("id", vvvv.header).sortable({
+	handle:".handle",
+	items:"li:not(a)",
+	update:function(){update();}
+});
+//ul header
+hHead = addHead(vvvv.header);
+hDiv.prepend($("<img>").css("cursor","move").attr("src","data:image/png;base64,<?echo$drag;?>").addClass("bigHandle"));
+hDiv.append(hHead);
+$(vvvv.data).each(function(k,v){
+	var iDiv = $("<li>").attr("id", k);
+	iDiv.append($("<img>").addClass("handle").css("cursor","move").attr("src","data:image/png;base64,<?echo$drag;?>"));
+	$(v).each(function(kk,vv){
+			fSpan = addFspan(kk).html(vv);
+			var xImg = deleteField();
+			fDiv = $("<span>").append(fSpan).append(xImg);
+			iDiv.append(fDiv);
+		});
+		//new field button
+		addB = addButton();
+		//delete whole line
+		delB = $("<button>").html("-").click(function(){
+			$(this).parent().hide("slow", function(){
+				$(this).remove();
+				update();
+			});
+		});
+		iDiv.append(addB);
+		iDiv.append(delB);
+		hDiv.append(iDiv);	
+	});
+	var addRow = addRowFnk();
+	delDiv = $("<button>").html("-").click(function(){
+		if(confirm("Delete the whole block?")){
+		$(this).parent().fadeOut("slow", function(){
+			$(this).remove();
+			update();
+		})}
+	});
+	hDiv.append(addRow);
+	hDiv.append(delDiv);
+	$(sivi).append(hDiv);
+});
+addNewBlock = $("<button>").html("++").click(function(){
+var hDiv = $("<ul>").attr("id", "NEW").sortable({
+	handle:".handle",
+	items:"li:not(a)",
+	update:function(){update();}
+});
+//ul header
+hHead = addHead("NEW");
+hDiv.prepend($("<img>").css("cursor","move").attr("src","data:image/png;base64,<?echo$drag;?>").addClass("bigHandle"));
+hDiv.append(hHead);
+var addRow = addRowFnk();
+delDiv = $("<button>").html("-").click(function(){
+	if(confirm("Delete the whole block?")){
+	$(this).parent().fadeOut("slow", function(){
+		$(this).remove();
+		update();
+	});}
+});
+hDiv.append(addRow);
+hDiv.append(delDiv);
+$(sivi).prepend(hDiv);
+});
+$(".content").html(sivi).prepend(addNewBlock);
+}
+	addHead = function(html){
+	return	$("<h1>").html(html)
+	.css("display","inline-block")
+	.css("margin-bottom","10px")
+	.addClass("editbox")
+	.editable(function(value,setting){
+		$(this).parent().attr("id",value);
+		return value;
+	},
+	{
+		onblur:"submit",
+		type:"noMal",
+		placeholder:"Header",
+		indicator:"saving",
+		style:"inherit",
+		callback:function(){update();}
+	});
+}
+addFspan = function(id){
+	return $("<span>").attr("id", id).addClass("field")
+	.addClass("editbox")
+	.editable(function(value,settings){
+		return value;
+	},
+	{
+		onblur:"submit",
+		type:"noMal",
+		placeholder:"Empty",
+		indicator:"saving",
+		style:"inherit",
+		callback:function(){update();}
+	});
+}
+addRowFnk = function(){
+	return $("<button>").html("+").click(function(){
+		var num = $(this).parent().children("li").length;
+		var iDiv = $("<li>").attr("id", num);
+		iDiv.append($("<img>").addClass("handle").css("cursor","move").attr("src","data:image/png;base64,<?echo$drag;?>"));
+		var fSpan = addFspan(0);
+		//delete field button
+		var xImg = deleteField();
+		var nuDiv = $("<span>").append(fSpan).append(xImg);
+		addB = addButton();
+		//delete whole line
+		delB = $("<button>").html("-").click(function(){
+			$(this).parent().hide("slow", function(){
+				$(this).remove();
+				update();
+			});
+		});
+		iDiv.append(nuDiv);
+		iDiv.append(addB);
+		iDiv.append(delB);
+		$(this).before(iDiv);
+		update();
+	});
+}
+addButton = function(){
+	return $("<button>").html("+").click(function(){	
+		var num;
+		num = $(this).siblings().length - 1;
+		var fSpan = addFspan(num);
+		//delete field button
+		var xImg = deleteField();
+		var nuDiv = $("<span>").append(fSpan).append(xImg);
+		$(this).before(nuDiv);
+		update();
+	});
+}
+deleteField = function(){
+	return $("<img>").css("cursor","pointer").css("position", "relative").css("top", "-10px").attr("src","data:image/png;base64,<?echo$x;?>").click(function(){
+			$(this).parent().fadeOut("slow", function(){
+				$(this).remove();
+				update();
+			});
+		
+	});
+}
+<?endif;?>
+function plainPrint(){
+	var all = $("<div>").addClass("content");
+	$(jayson).each(function(k,v){
+		var block = $("<ul>");
+	//	if(v.header == "css"){return;}
+		var h1 = $("<h1>").html(v.header);
+		block.append(h1);
+		$(v.data).each(function(kk, vv){
+			var line = $("<li>").addClass("view");
+			$(vv).each(function(kkk, vvv){
+				
+				line.append(vvv);
+				if(kkk < vv.length-1){
+					line.append(" - ");
+				}
+			});
+			block.append(line);
+		});
+		all.append(block);
+	});
+	$(".content").replaceWith(all);
+}
 
-					#download{
-						position:absolute;
-						top:10px;
-						left:50%;
-					}
-					*{
-						padding:0px;
-						margin:0px;
-					}
-					li{
-						list-style-type: none;
-					}
-					body{
-					    overflow-x: hidden;
-					    width:100%;
-					    padding:0px;
-					    margin:0px;
-						font-family:<?echo$Font;?>, arial;
-						font-size:12pt;
-						text-align:center;
-					}
-					.header{
-						width:100%;
-						position:absolute;
-						left:0px;
-						height:45px;
-						display:inline-block;
-						padding-bottom:45px;
-					}	
-					.headerB{
-						position:relative;
-						background:#EAEAEA;
-						width:100%;
-					//	max-width:1000px;
-						margin:auto;
-						display:inline-block;
-						height:45px;
-						}		
-					.headerC{
-						position:relative;
-						background:#EAEAEA;
-						width:100%;
-						//max-width:600px;
-						margin:auto;
-						padding-right:1%;
-						display:inline-block;
-						height:45px;
-						}
-						.contentB{
-						    padding-right:25px;
-						}
-					.content{
-						min-height:800px;
-						//width:100%;
-						padding:0%;
-						padding-top:75px;
-						padding-bottom:50px;
-						max-width:750px;
-					//	min-width:600px;
-						margin:auto;
-						background:<?echo$Background;?>;
-						height:100%;
-						text-align:left;
-						display:inline-block;
-					}
-					#gear{
-						position:absolute; 
-						top:0px;
-						right:25px;
-					}
-			        .font{
-						text-shadow: 0 1px 0 #ffffff;
-			            padding-left:20px;
-						padding-bottom:10px;
-						position:absolute; 
-						top:13px;
-						right:130px;
-                    }
-					.background
-					{
-						text-shadow: 0 1px 0 #ffffff;
-			            padding-left:20px;
-						padding-bottom:10px;
-						position:absolute; 
-						top:13px;
-						right:50px;
-					}
-					.pw{
-						position:absolute; 
-						top:13px;
-						right:5px;	
-					}
-					a{
-						text-decoration:none;
-						color:black;
-					}
-					.edit{
-					}
-					.pad50{
-					    margin-left:50px;
-						margin-right:0px;
-					}
-					.h1{
-						font-weight:bold;
-						font-size:16pt;
-						position:relative;
-						margin-left:25px;
-						margin-top:20px;
-						//right:25px;
-					}
-					.link{
-						cursor:pointer;
-					}
-					.dots{
-						 cursor:move;
-					}
-					.fork{
-						position:relative;
-						top:-5px;
-						float:right;
-						cursor:pointer;
-					}
-					.start{
-						position:absolute;
-						top:50px;
-						left:25px;
-						cursor:pointer;
-					}					
-					.list{
-						position:absolute;
-						top:50px;
-						left:100px;
-						cursor:pointer;
-					}
-			</style>
-			<script type="text/javascript">
-
-	$(document).ready(function(){
-
+$(document).ready(function(){
+	
 <?if($view == "view"):?>
-
+		plainPrint();
 		$(".header").hover(function(){
 			$(".header").animate({top:'0'},100);
 		},
@@ -559,194 +438,19 @@ function rhtmlspecialchars(str) {
 		}).delay(500).animate({top:"-45"},200);
 
 		gearClick = function(){
-			$("#gear").html("<form action='' method='post'><br><input type='hidden' value='edit' name='view'><input class='pw' name='pw' type='password' value='' id='pw'><form>");
+			$("#gear").html("<form id='pwForm' action='' method='post'><input type='hidden' value='edit' name='view'><input class='pw' name='pw' type='password' value='' id='pw'></form>");
 			$("#pw").focus();
 			$("#pw").blur(function(){
-				$("#gear").html("<a href='javascript:gearClick();'><img src='data:image/png;base64,<?echo$gears;?>'></a>");
+				$("#gear").html("<span id='gear'><a class='noImg' id='gearLink' href='javascript:gearClick();'><img id='gearImg' src='data:image/png;base64,<?echo$gears;?>'></a></span>");
 			})
 		//return false;	
 		}
 <?else:?>
+		console.log("EDIT");
+		refresh();
 
-		$("#gearLink").attr("href", "?download=true");
-		$("#gearImg").attr("src","data:image/png;base64,<?echo$dl;?>").css("padding-top","14px");
-		
-		function sortHelper(thing, i){
-			$(thing).children().each(function(index2){
-				if(index2>0){
-					var foo = $(this).attr("id");
-					if(foo == undefined || index2 == length){
-						foo = $(this).attr("name").split("_");
-						foo[1] = i;
-						foo = foo.join("_");
-						$(this).attr("name", foo);
-						makeDelete(this);
-					}
-					if(foo != undefined){
-						foo = foo.split("_");
-						foo[2] = i;
-						foo = foo.join("_");
-						$(this).attr("id", foo);
-					}		
-				}	
-			});	
-		}
-		$("#soloShows__0").sortable({ 
-		    handle : '.handle', 
-			items: "li:not(a)",
-		    update : function () { 
-				$.post("index.php",{view:"edit",array:"soloShows", order:$('#soloShows__0').sortable('toArray')}, function(data){
-					$("#soloShows__0").children().each(function(index){
-						if(index+2 < ($("#soloShows__0").children().length)){
-							$(this).attr("id", "soloShows_"+index);
-							var length = $(this).children().length-1;
-							sortHelper(this, index);
-						}
-					});
-				});
-			} 
-		});  
-		$("#degrees__0").sortable({ 
-		    handle : '.handle', 
-			items: "li:not(a)",
-		    update : function () { 
-				$.post("index.php",{view:"edit",array:"degrees", order:$('#degrees__0').sortable('toArray')}, function(data){
-					$("#degrees__0").children().each(function(index){
-						if(index+2 < ($("#degrees__0").children().length)){
-							$(this).attr("id", "degrees_"+index);
-							var length = $(this).children().length-1;
-							sortHelper(this, index);
-						}
-					});
-				});
-			} 
-		}); 		
-		$("#grants__0").sortable({ 
-		    handle : '.handle', 
-			items: "li:not(a)",
-		    update : function () { 
-				$.post("index.php",{view:"edit",array:"grants", order:$('#grants__0').sortable('toArray')}, function(data){
-					$("#grants__0").children().each(function(index){
-						if(index+2 < ($("#grants__0").children().length)){
-							$(this).attr("id", "grants_"+index);
-							var length = $(this).children().length-1;
-							sortHelper(this, index);
-						}
-					});
-				});
-			} 
-		}); 			
-		$("#publications__0").sortable({ 
-		    handle : '.handle', 
-			items: "li:not(a)",
-		    update : function () { 
-				$.post("index.php",{view:"edit",array:"publications", order:$('#publications__0').sortable('toArray')}, function(data){
-					$("#publications__0").children().each(function(index){
-						if(index+2 < ($("#publications__0").children().length)){
-							$(this).attr("id", "publications_"+index);
-							var length = $(this).children().length-1;
-							sortHelper(this, index);
-						}
-					});
-				});
-			} 
-		}); 			
-		$("#groupShows__0").sortable({ 
-		    handle : '.handle', 
-			items: "li:not(a)",
-		    update : function () { 
-				$.post("index.php",{view:"edit",array:"groupShows", order:$('#groupShows__0').sortable('toArray')}, function(data){
-					$("#groupShows__0").children().each(function(index){
-						if(index+2 < ($("#groupShows__0").children().length)){
-							$(this).attr("id", "groupShows_"+index);
-							var length = $(this).children().length-1;
-							sortHelper(this, index);
-						}
-					});
-				});
-			} 
-		});  			
-		$("#collections__0").sortable({ 
-		    handle : '.handle', 
-			items: "li:not(a)",
-		    update : function () { 
-				$.post("index.php",{view:"edit",array:"collections", order:$('#collections__0').sortable('toArray')}, function(data){
-					$("#collections__0").children().each(function(index){
-						if(index+2 < ($("#collections__0").children().length)){
-							$(this).attr("id", "collections_"+index);
-							var length = $(this).children().length-1;
-							sortHelper(this, index);
-						}
-					});
-				});
-			} 
-		});   			
-		$("#bibliographys__0").sortable({ 
-		    handle : '.handle', 
-			items: "li:not(a)",
-		    update : function () { 
-				$.post("index.php",{view:"edit",array:"bibliographys", order:$('#bibliographys__0').sortable('toArray')}, function(data){
-					$("#bibliographys__0").children().each(function(index){
-						if(index+2 < ($("#bibliographys__0").children().length)){
-							$(this).attr("id", "bibliographys_"+index);
-							var length = $(this).children().length-1;
-							sortHelper(this, index);
-						}
-					});
-				});
-			} 
-		});    			
-		$("#employments__0").sortable({ 
-		    handle : '.handle', 
-			items: "li:not(a)",
-		    update : function () { 
-				$.post("index.php",{view:"edit",array:"employments", order:$('#employments__0').sortable('toArray')}, function(data){
-					$("#employments__0").children().each(function(index){
-						if(index+2 < ($("#employments__0").children().length)){
-							$(this).attr("id", "employments_"+index);
-							var length = $(this).children().length-1;
-							sortHelper(this, index);
-						}
-					});
-				});
-			} 
-		});     			
-		$("#galleries__0").sortable({ 
-		    handle : '.handle', 
-			items: "li:not(a)",
-		    update : function () { 
-				$.post("index.php",{view:"edit",array:"galleries", order:$('#galleries__0').sortable('toArray')}, function(data){
-					$("#galleries__0").children().each(function(index){
-						if(index+2 < ($("#galleries__0").children().length)){
-							$(this).attr("id", "galleries_"+index);
-							var length = $(this).children().length-1;
-							sortHelper(this, index);
-						}
-					});
-				});
-			} 
-		});      			
-		$("#notes__0").sortable({ 
-		    handle : '.handle', 
-			items: "li:not(a)",
-		    update : function () { 
-				$.post("index.php",{view:"edit",array:"notes", order:$('#notes__0').sortable('toArray')}, function(data){
-					$("#notes__0").children().each(function(index){
-						if(index+2 < ($("#notes__0").children().length)){
-							$(this).attr("id", "notes_"+index);
-							var length = $(this).children().length-1;
-							sortHelper(this, index);
-						}
-					});
-				});
-			} 
-		}); 
-		
-
-		setDelete();
-		makeEdit();
 		$('#Font').editable(function(value, settings) { 
-			$.post("index.php", { id: "Font", value:value, view:"ajax" }, function(v){});
+			$.post("index.php", { id: "Font", value:value, view:"ajax" }, function(v){console.log(v);});
 			$("body").css("font-family",value);
 			return value;
 		},
@@ -771,284 +475,201 @@ function rhtmlspecialchars(str) {
 			style:"inherit"
 		});
 
-<?endif;?>
-	});
-<?
-$keyArrayString = "var keyArray = new Array(";
-foreach($infoCopy as $k=>$v):
-$keyArrayString.="\"$k\",";
-endforeach;
-$keyArrayString = substr($keyArrayString, 0, -1).");\n";
-echo$keyArrayString;
-?>
+		$("#gearLink").attr("href", "?download=true");
+		$("#gearImg").attr("src","data:image/png;base64,<?echo$dl;?>").css("padding-top","14px");
 
-    var makeDelete = function(button){
-
-        if(typeof(button)!="object"){
-            button = $(button);
-        }
-        //$(button).css("background","red");
-        $(button).unbind("click");
-        $(button).click(function(){
-                //console.log("ACTUALLY DELETEING");
-                //console.log($(this).attr("name"));
-                //console.log($(this).length)
-				foo = $(this).attr("name")
-				goo = foo.split("_");
-				var poo = goo[0]+"_delete_"+goo[1];
-				//console.log(poo);
-				$.post("index.php", { id: poo, value:"", view:"ajax" }, function(v){});
-				$("#"+foo).hide('fast', function(){ 
-					$("#"+foo).remove();						
-                    var spot = $("#span_"+keyArray.indexOf(goo[0]));
-					var chillins = spot.children(':nth-child(3)').children();
-					$(chillins).each(function(index){
-					  //  console.log("index="+index);
-					  //  console.log("current index = "+goo[1]);
-						if(index>=goo[1] && index<((chillins.length)-2)){
-							//console.log(this);
-							var oldID = $(this).attr("id");
-						//	console.log("trying to split id of ");
-						//	console.log(this);
-							curID = oldID.split("_");
-							//console.log("changing"+curID[curID.length-1]+" to "+(parseInt(curID[curID.length-1])-1));
-							curID[curID.length-1] = (parseInt(curID[curID.length-1])-1);
-							newID = curID.join("_");
-							$(this).attr("id", newID);
-							var chilength = $(this).children().length;
-							//console.log("children");
-						    //console.log($(this).children());
-							$(this).children().each(function(index){
-							    //console.log("'this' is:");
-							   // console.log($(this));
-								if(index == 0) return;
-								if(index<(chilength-1)){
-									var oldID2 = $(this).attr("id");
-								}
-								else{
-									var oldID2 = $(this).attr("name");
-									if($(this).attr("id")){
-									    	var oldID22 = $(this).attr("id");
-                                            var curID22 = oldID22.split("_");
-								            curID22[curID22.length-1] = parseInt(curID22[curID22.length-1])-1;
-								            var newID22 = curID22.join("_");
-									}
-								}
-								//console.log("old id2:");
-							    //console.log(oldID2);
-								//console.log("old id2 was<<");
-								var curID2 = oldID2.split("_");
-								curID2[curID2.length-1] = parseInt(curID2[curID2.length-1])-1;
-								var newID2 = curID2.join("_");
-								
-								if(index< (chilength-1)){
-									$(this).attr("id", newID2);
-								}
-								else{
-								    //console.log(this);
-									$(this).attr("name", newID2);
-									if($(this).attr("id")){
-									    $(this).attr("id", newID22);
-									}								
-								}
-								makeDelete(this);
-
-							});
-					    }
-					    if(index==(chillins.length-2)){
-						   // console.log(this);
-						    var newName = $(this).attr("name")-1;
-						    $(this).attr("name", newName);
-
-					    }
-				    });
-		        });
-		    });
-    }
-	var setDelete = function(){
-		$(".delete").each(function(index){
-			makeDelete(this);
+		
+		$('span.editbox').bind('keydown', function(evt) {
+		    if(evt.keyCode==9) {
+		        $(this).find("input").blur();
+		        var nextBox='';
+		         if ($("span.editbox").index(this) == ($("span.editbox").length-1)) {
+		                nextBox=$("span.editbox:first");         //last box, go to first
+		            } else {
+		                nextBox=$(this).next("span.editbox");    //Next box in line
+		            }
+		        $(nextBox).dblclick();  //Go to assigned next box
+		        return false;           //Suppress normal tab
+		    };
 		});
-	}
-
-                var addTo = function(key,amount){
-                    //console.log("ADD");
-                    //console.log(key, amount);
-                    var foo = parseInt(amount)+1;
-                    $("#"+key).attr("name",(foo));
-                    switch (key){
-                    <?
-                    $i=0;
-                    foreach ($infoArray as $title=>$infos):
-                        echo "
-                        case $i:\n";
-                        $dump = "<div id=\"$title"."_'+amount+'\">";
-                        ?>
-                        var spot = $("#span_"+keyArray.indexOf("<?echo$title;?>"));
-                        //console.log($(spot).children(":nth-child(3)").children().length);
-
-                        <?
-                        $dump = "<li class=\"draggable\" id=\"$title"."_'+(($(spot).children(\":nth-child(3)\").children().length)-2)+'\">"."<img class=\"handle dots\"  src=\"data:image/png;base64,$drag\">";
-                        foreach($infoCopy[$title] as $k=>$value):
-                            if($k==0):continue;endif;
-                            $classes = $dump == "" ? "newEdit" : "newEdit";
-                            //$dump .= '<span name="'.$value.'" class="'.$classes.'" id="'.$title.'_'.$value.'_'.($count($$title)).'"></span>&nbsp;-&nbsp;';      
-                            $dump .= '<span name="'.$value.'" class="'.$classes.'" id="'.$title.'_'.$value.'_\'+amount+\'"></span>&nbsp;-&nbsp;';      
-                        endforeach;
-                        $dump = substr($dump, 0, -13);
-                        $dump .= $view == "edit" ? " <img id=\"deleteLink_".$title."_'+amount+'\" class=\"delete link\" name=\"".$title."_'+amount+'\" src=\"data:image/png;base64,$x\">":"";
-                        $dump.="</li>";
-                        //$dump = substr($dump, 0, -13)."</div>";
-                        echo "
-                        var fill = '$dump';\n";
-                    ?>
-                            $.post("index.php", { id: "<?echo$title;?>_<?echo$value;?>_new", value:"", view:"ajax" }, function(v){});
-                            var spot = $("#span_<?echo$i;?>").children();
-                            //console.log(spot.children());
-                            var index = spot.children().length-2;
-                            //console.log(index);
-                            if(index>0){
-                                //console.log("after");
-                                spot.children(':nth-child('+index+')').after(fill);
-                            }
-                            else{
-                                //console.log("before");
-                                spot.children(':nth-child('+index+1+')').before(fill);
-                            }
-                            $('.newEdit').each(function(index){
-                                    $(this).editable('index.php',
-                                    {	              				   
-                                        type:"noMal",
-                                        placeholder:"Enter "+$(this).attr("name"),
-                                        indicator:"saving...",
-                                        style:"inherit",
-										data:function(a,b){
-											console.log("data");
-											console.log(a);
-											return a;
-										},
-                                        submitdata : {view: "ajax", newArray:"<?echo$title;?>"}
-                                    });
-                            });
-                            //console.log("wants to make into delete number "+amount);
-                            
-                            makeDelete("#<?echo'deleteLink_'.$title.'_"+amount+"';?>");
-                            break;
-                        <?
-                            $i++;
-                        endforeach;
-                        ?>
-                    }	
-                }
-                var makeEdit = function(){
-                    $('.edit').each(function(index){
-                        $(this).editable('index.php',
-                        {	
-                            type:"noMal",
-                            placeholder:"Enter "+$(this).attr("name"),
-	                        indicator:"saving...",
-	                        style:"inherit",
-	                        submitdata : {view: "ajax"}
-                        });
-                    });
-                };
-			</script>
-			<script type="text/javascript">
-						//GOOGLE ANALYTICS FOR SIVI.ME
-
-			  var _gaq = _gaq || [];
-			  _gaq.push(['_setAccount', 'UA-27235350-1']);
-			  _gaq.push(['_trackPageview']);
-			  (function() {
-			    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-			  })();
-			</script>
-			
-		</head>
-		<body>
-		<div class="header">
-		<div class="headerB">
-		<div class="headerC">
-		<span id="gear"><a id="gearLink" href="javascript:gearClick();"><img id="gearImg" src='data:image/png;base64,<?echo$gears;?>'></a></span>
-		<?if($view=="edit"):?>
-		<span class="background" name="Background" id="Background" style="color:<?echo$Background;?>"><?echo$Background;?></span>
-		<span class="font" name="Font" id="Font"><?echo$Font;?></span>
-		<?else:
-		$_SESSION['pw'] = "";
-		endif;?>
-				<span id="infoButton" style="font-size:14pt; font-weight:bold; cursor:pointer;text-shadow: 0 1px 0 #ffffff; float:left;padding:12px;">SIVI.ME</span>
-<div style="float:left;padding-left:10px;padding-top:11px;" class="fb-like"  data-send="false" data-layout="button_count" data-width="150" data-show-faces="false"></div>
-
-		</div>
-		</div>
-		</div>
-		<div class="content">
-		<div class="contentB">
-						<div id="test-log"></div>
-
-		<span class="edit h1" id="Name" name="Name"><?echo$Name;?></span><br>
-		<ul id="contact_list" class="pad50">
-		<?
-		echo $Address != "" || $view == "edit"? '<li style="list-style-type: none;" id="1_1"><span class="edit  handle" id="Address" name="Address">'.$Address.'</span></li>':'';
-		echo ($City != "" || $State != "" || $Zip != "") || $view == "edit" ? '<li style="list-style-type: none;" id="1_2">':'';
-		echo $City != "" || $view == "edit"? '<span class="edit  handle" id="City" name="City">'.$City.'</span>, ':'';
-		echo $State != "" || $view == "edit"? '<span class="edit" id="State" name="State">'.$State.'</span> ':'';
-		echo $Zip != "" || $view == "edit"? '<span class="edit" id="Zip" name="Zip">'.$Zip.'</span>':'';
-		echo ($City != "" || $State != "" || $Zip != "") || $view == "edit" ? '</li>':'';
-		echo $Country != "" ? '<li style="list-style-type: none;" id="1_3"><span class="edit  handle" id="Country" name="Country">'.$Country.'</span></li>' : '';	
-		echo $Phone != "" || $view == "edit"? '<li style="list-style-type: none;" id="1_4"><span class="edit  handle" id="Phone" name="Phone">'.$Phone.'</span></li>':'';
-		echo $Email != "" || $view == "edit"? '<li style="list-style-type: none;" id="1_5"><span class="edit  handle" id="Email" name="Email">'.$Email.'</span></li>':'';
-		echo $Homepage != "" || $view == "edit"? '<li style="list-style-type: none;" id="1_6"><span class="edit  handle" id="Homepage" name="Homepage">'.$Homepage.'</span></li>':'';
-		?>
-		</ul>
-		<br>
-		<?
-		$i=0;
-		foreach($infoArray as $title=>$infos):
-			if(count($infos)>0 || $view == "edit"):
-			echo"<div id=\"span_$i\">";
-			  $j = 0;
-
-     		echo'<br><span class="h1">'.$infoCopy[$title][0].'</span><br><ul id="'.$title.'__'.$j.'" class="pad50">';
-
-            foreach($infos as $info):
-				//$dump = $view == "edit" ? "<li class='draggable' id=\"$title"."_"."$j\">"."<img style='padding:2px; cursor:move;' src='data:image/png;base64,$drag'>":"<li id=\"$title"."_"."$j\">";
-				$dump = $view == "edit" ? "<li  class='draggable' id=\"$title"."_"."$j\">"."<img class='handle dots'  src='data:image/png;base64,$drag'>":"<li style='list-style-type: square;' id=\"$title"."_"."$j\">";
- 				foreach($info as $field=>$value):
-                    $classes = $dump == "" ? "edit" : "edit";
-					$dump .= '<span name="'.$field.'" class="'.$classes.'" id="'.$title.'_'.$field.'_'.$j.'">'.stripslashes($value).'</span>&nbsp;-&nbsp;';  
-				endforeach;
-				$dump = substr($dump, 0, -13);
-				$dump .= $view == "edit" ? " <img class=\"delete link\" name=\"".$title."_".$j."\" src='data:image/png;base64,$x'>":"";
-				$dump.="\n</li>";
-				echo $dump;
-				$j++;    
-
-			endforeach;
-			if($view == "edit"):
-				echo "<a id='$i' name='$j' href='javascript:addTo($i,$(\"#$i\").attr(\"name\"));'><span style='padding:3px;margin-top:5px;font-weight:bold;'>+</span></a><br>";
-			endif;
-			echo"</ul></div>";
-			endif;
-			$i++;
-		endforeach;
-		?>
-		</div>
-		</div>
-<?if($view == "view"):?>
-
-<?else:?>
-<script>
-$(document).ready(function(){
-
-	$("#infoButton").click(function(){
-		window.location="";
-	});
+	<?endif;?>
+	
 });
 </script>
-<?endif;?>
+		<style>
+		
+		*{margin:0px;
+			padding:0px;
+		}
+		h1{
+			font-size:16pt;
+		}
+		#pwForm{
+			position:absolute;
+			top:10px;
+			right:20px;
+		}
+		.divLine{
+			margin-left:50px;
+		}
+		.divBlock{
+			margin-left:50px;
+		}
+		.bigHandle{
+			height:25px;
+		}
+		li{
+			list-style-type: none;
+			margin-left:25px;
+		}
+		li.view{
+			list-style-type: square;
+		}
+		ul{
+			margin-left:25px;
+			margin-bottom:25px;
+		}
+		body{
+			font-family:<?echo$Font;?>;
+		}
+		button {
+		   border: none;
+		   background:none;
+		   padding: 3px;
+			margin:0px 2px 0px 2px;
+		   color: #000000;
+		   font-size: 13px;
+		   font-family: Helvetica, Arial, Sans-Serif;
+		   text-decoration: none;
+		   vertical-align: middle;
+			min-width:20px;
+			cursor:pointer;
+		   }
+
+		button:active {
+			position:relative;
+			top:1px;
+		   border: none;
+		   background: none;
+
+		   }
+		.content{
+			max-width:900px;
+			min-width:100px;
+			margin:0px auto;
+			min-height:800px;
+			background:<?echo$Background;?>;
+			padding:0%;
+			padding-top:75px;
+			padding-bottom:50px;
+			max-width:750px;
+			height:100%;
+			text-align:left;
+		}
+		.field{
+			margin:0 5px 0 5px;
+		}
+
+		.right{
+			float:right;
+			display:inline-block;
+		}
+		.left{
+			float:left;
+			display:inline-block;
+			height:100%;
+			line-height:50px;
+		}
+		a{
+			text-decoration:none;
+			color:black;
+			padding-right: 18px;
+   			background: transparent url(data:image/gif;base64,<?echo$link;?>) no-repeat center right;
+		}
+		a.noImg{				
+				padding-right: 0px;
+   				background: none;
+		}
+		a:hover{
+			
+			color:black;
+		}
+		a:active{
+			color:black;
+		}
+		a:visited{
+			color:black;
+		}
+		.css{
+			position:relative;
+		}
+		.push{
+			font-family: "Times New Roman";
+			font-weight:bold;
+			font-style:italic;
+			font-size:24pt;
+			cursor:pointer;
+			margin:0 5px;
+		}
+		#gear{
+			margin:0px;
+			padding:0px;
+		}
+		.header{
+			width:100%;
+			position:absolute;
+			left:0px;
+			height:45px;
+			display:inline-block;
+			padding-bottom:45px;
+		}	
+		.headerB{
+			position:relative;
+			background:#EAEAEA;
+			width:100%;
+			margin:auto;
+			display:inline-block;
+			height:45px;
+			}		
+		.headerC{
+		//	line-height:100%;
+			position:relative;
+			background:#EAEAEA;
+			width:100%;
+			margin:auto;
+			padding-right:1%;
+			display:inline-block;
+			height:45px;
+			}
+			#gear{
+				margin-right:25px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<div class="headerB">
+				<div class="headerC">
+					<span class="left">
+						<a id="infoButton" class="noImg" style="font-size:14pt; font-weight:bold; cursor:pointer;text-shadow: 0 1px 0 #ffffff;margin-left:20px;" href="">SIVI.ME</a>
+						<span style="padding-left:10px;" class="fb-like"  data-send="false" data-layout="button_count" data-width="auto" data-show-faces="false"></span>
+					</span>
+					<span class="right">
+	<?if($view=="edit"):?>
+						<span class="background" name="Background" id="Background" style="color:<?echo$Background;?>"><?echo$Background;?></span>
+						<span class="font" name="Font" id="Font"><?echo$Font;?></span>
+	<?else:
+						$_SESSION['pw'] = "";
+	endif;?>
+						<span id="gear"><a class="noImg" id="gearLink" href="javascript:gearClick();"><img id="gearImg" src='data:image/png;base64,<?echo$gears;?>'></a></span>
+	
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+		</div>
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -1059,5 +680,4 @@ $(document).ready(function(){
 }(document, 'script', 'facebook-jssdk'));</script>
 
 	</body>
-	</html>
-<?endif;?>
+</html>
