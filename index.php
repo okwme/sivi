@@ -406,7 +406,7 @@ deleteField = function(){
 function plainPrint(){
 	var all = $("<div>").addClass("content");
 	$(jayson).each(function(k,v){
-		var block = $("<ul>");
+		var block = $("<ul>").css("display","inline-block");
 	//	if(v.header == "css"){return;}
 		var h1 = $("<h1>").html(v.header);
 		block.append(h1);
@@ -421,6 +421,7 @@ function plainPrint(){
 			});
 			block.append(line);
 		});
+		all.append($("<br>"));
 		all.append(block);
 	});
 	$(".content").replaceWith(all);
@@ -497,7 +498,9 @@ $(document).ready(function(){
 });
 </script>
 		<style>
-		
+		body{
+			width:100%;
+		}
 		*{margin:0px;
 			padding:0px;
 		}
@@ -521,6 +524,7 @@ $(document).ready(function(){
 		li{
 			list-style-type: none;
 			margin-left:25px;
+			width:auto;
 		}
 		li.view{
 			list-style-type: square;
@@ -528,6 +532,7 @@ $(document).ready(function(){
 		ul{
 			margin-left:25px;
 			margin-bottom:25px;
+			width:auto;
 		}
 		body{
 			font-family:<?echo$Font;?>;
@@ -553,8 +558,11 @@ $(document).ready(function(){
 		   background: none;
 
 		   }
+		.holder{
+			text-align:center;
+			width:100%;
+		}
 		.content{
-			max-width:900px;
 			min-width:100px;
 			margin:0px auto;
 			min-height:800px;
@@ -565,6 +573,8 @@ $(document).ready(function(){
 			max-width:750px;
 			height:100%;
 			text-align:left;
+			display:block;
+			width:100%;
 		}
 		.field{
 			margin:0 5px 0 5px;
@@ -667,9 +677,11 @@ $(document).ready(function(){
 				</div>
 			</div>
 		</div>
-		<div class="content">
+		<div class="holder">
+			<div class="content">
+			</div>
 		</div>
-
+		
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
