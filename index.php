@@ -8,7 +8,7 @@ $link = "R0lGODlhEAAQAIABACBRZv///yH5BAEAAAEALAAAAAAQABAAAAIgjI+py+0GIngwKjkDvkh
 
 $pw = "";
 $Background = "#F5FCCB";
-$Font = "Helvetica Neue";
+$Font = "Arial";
 $pass = false;
 if(($_REQUEST['pw']==$pw) || $_SESSION['pw']==$pw){
     $_SESSION['pw'] = $pw;
@@ -87,7 +87,7 @@ header('Content-type: text/html; charset=utf-8');?><!DOCTYPE html PUBLIC "-//W3C
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
 <script>
-var jayson = [{"header":"Name","data":[["Address"],["City, State ZIP"],["Email"],["<a href=\"\" target=\"_blank\">website<\/a>"]]},{"header":"Degrees","data":[["Degree","Year","Major","Institution"]]},{"header":"Grants & Awards","data":[["Year","Title"]]},{"header":"Solo & Partner Shows","data":[["Year","Title","Location","City","Country"]]},{"header":"Group Shows","data":[["Year","Title","Location","City","Country"]]},{"header":"Books & Publications","data":[["Year","Title","Publisher","City","Country"]]},{"header":"Bibliography","data":[["Author","Title","Publication","Year"]]},{"header":"Employment","data":[["Title","Employer","City","Country"]]},{"header":"Notes","data":[["Notes"]]}];
+var jayson = [{"header":"Name","data":[["Address"],["City, State ZIP"],["Email"],["<a href=\"\" target=\"_blank\">website<\/a>"]]},{"header":"Education","data":[["Degree","Year","Major","Institution"]]},{"header":"Grants & Awards","data":[["Year","Title"]]},{"header":"Solo & Partner Shows","data":[["Year","Title","Location","City","Country"]]},{"header":"Group Shows","data":[["Year","Title","Location","City","Country"]]},{"header":"Books & Publications","data":[["Year","Title","Publisher","City","Country"]]},{"header":"Bibliography","data":[["Author","Title","Publication","Year"]]},{"header":"Employment","data":[["Title","Employer","City","Country"]]},{"header":"Notes","data":[["Notes"]]}];
 
 		(function($){
 
