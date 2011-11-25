@@ -305,10 +305,7 @@ header('Content-type: text/html; charset=utf-8');
                             currentWidth = input.width(),
                             isValidWidthChange = (newWidth < currentWidth && newWidth >= minWidth)
                                                  || (newWidth > minWidth && newWidth < o.maxWidth);
-                        
                         // Animate width
-					//	console.log(testSubject);
-					//	console.log(testSubject.width());
                         if (isValidWidthChange) {
                             input.width(newWidth);
                         }                        
@@ -324,7 +321,8 @@ header('Content-type: text/html; charset=utf-8');
         
         };
         
-    })(jQuery);/*
+    })(jQuery);
+			/*
 			 * Jeditable - jQuery in place edit plugin
 			 * Copyright (c) 2006-2009 Mika Tuupola, Dylan Verheul
 			 * Licensed under the MIT license:
