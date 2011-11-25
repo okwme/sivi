@@ -274,8 +274,7 @@ header('Content-type: text/html; charset=utf-8');
                 maxWidth: 1000,
                 minWidth: 0,
                 comfortZone: 20
-            }, o);
-            
+            }, o);    
             this.filter('input:text').each(function(){
                 var minWidth = o.minWidth || $(this).width(),
                     val = '',
@@ -287,18 +286,12 @@ header('Content-type: text/html; charset=utf-8');
                         width: 'auto',
                         fontSize: "9pt",
                         fontFamily: "arial",
-                       // fontWeight: input.css('fontWeight'),
-                       // letterSpacing: input.css('letterSpacing'),
                         whiteSpace: 'nowrap'
                     }),
                     check = function() {
-                        //console.log(val===(val = input.val()));
                         if (val === (val = input.val())) {return;}
-                        //console.log(val);
-                        // Enter new content into testSubject
                         var escaped = val.replace(/&/g, '&amp;').replace(/\s/g,'&nbsp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-                        testSubject.html(escaped);
-                        
+                        testSubject.html(escaped);   
                         // Calculate new width + whether to change
                         var testerWidth = testSubject.width(),
                             newWidth = (testerWidth + o.comfortZone) >= minWidth ? testerWidth + o.comfortZone : minWidth,
@@ -310,17 +303,11 @@ header('Content-type: text/html; charset=utf-8');
                             input.width(newWidth);
                         }                        
                     };
-                 $("body").append(testSubject); 
-              //  testSubject.append(body);
-                
+                 $("body").append(testSubject);                 
                 $(this).bind('keyup keydown blur update', check);
-                
-            });
-            
+            });  
             return this;
-        
         };
-        
     })(jQuery);
 			/*
 			 * Jeditable - jQuery in place edit plugin
