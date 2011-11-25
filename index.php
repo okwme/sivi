@@ -574,8 +574,8 @@ $(document).ready(function(){
 			max-width:750px;
 			height:100%;
 			text-align:left;
-			display:block;
-			width:100%;
+			display:inline-block;
+			padding-right:10px;
 		}
 		.field{
 			margin:0 5px 0 5px;
