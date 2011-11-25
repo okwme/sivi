@@ -130,7 +130,7 @@ var jayson = [{"header":"Instructions","data":[["Click the gear icon in the top 
 								}                        
 							};
 							$("body").append(testSubject);                 
-							$(this).bind('keyup keydown blur update', check);
+							$(this).bind('keyup keydown blur select update', check);
 						});  
 						return this;
 					};
@@ -205,7 +205,7 @@ var jayson = [{"header":"Instructions","data":[["Click the gear icon in the top 
 <?if( $view == "edit"):?>
 $.editable.addInputType('noMal', {
 	element:function(settings,original){
-		var input = $('<input type="text">').autoGrowInput();
+		var input = $('<input type="text">').autoGrowInput().addClass("inputTxt");
 		//var input = $('<input type="text">');
 		$(this).append(input);
 		return(input);
@@ -504,6 +504,13 @@ $(document).ready(function(){
 		}
 		*{margin:0px;
 			padding:0px;
+		}
+		input[":text"]{
+			width:auto;
+		}
+		.inputTxt{
+			background:yellow;
+			width:50%;
 		}
 		h1{
 			font-size:16pt;
