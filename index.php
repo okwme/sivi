@@ -500,6 +500,7 @@ $(document).ready(function(){
 		<style>
 		body{
 			width:100%;
+			overflow-x:hidden;
 		}
 		*{margin:0px;
 			padding:0px;
