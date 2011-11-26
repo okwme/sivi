@@ -87,7 +87,7 @@ header('Content-type: text/html; charset=utf-8');?><!DOCTYPE html PUBLIC "-//W3C
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
 <script>
-var jayson = [{"header":"Name","data":[["Address"],["City, State ZIP"],["Email"],["<a href=\"\" target=\"_blank\">website<\/a>"]]},{"header":"Education","data":[["Degree","Year","Major","Institution"]]},{"header":"Grants & Awards","data":[["Year","Title"]]},{"header":"Solo & Partner Shows","data":[["Year","Title","Location","City","Country"]]},{"header":"Group Shows","data":[["Year","Title","Location","City","Country"]]},{"header":"Books & Publications","data":[["Year","Title","Publisher","City","Country"]]},{"header":"Bibliography","data":[["Author","Title","Publication","Year"]]},{"header":"Employment","data":[["Title","Employer","City","Country"]]},{"header":"Notes","data":[["Notes"]]}];
+var jayson = [{"header":"Instructions","data":[["Click the gear icon in the top right corner."],["Enter a password to create one."],["Once in edit mode, click on a word to edit it."],["Click \"x\" or \"-\" to delete a field or a row or a whole block."],["Click \"+\" to add a field or row (++ to add a block)"],["Drag rows or blocks with the three vertical dots."],["Click the font or hexadecimal color code to change either."],["(Optional)"],["Click the download icon in the top right corner to download your sivi."],["Upload your index.php file to your server with permissions set to 777."]]},{"header":"Name","data":[["Address"],["City, State ZIP"],["Email"],["<a href=\"\" target=\"_blank\">website<\/a>"]]},{"header":"Education","data":[["Degree","Year","Major","Institution"]]},{"header":"Grants & Awards","data":[["Year","Title"]]},{"header":"Solo & Partner Shows","data":[["Year","Title","Location","City","Country"]]},{"header":"Group Shows","data":[["Year","Title","Location","City","Country"]]},{"header":"Books & Publications","data":[["Year","Title","Publisher","City","Country"]]},{"header":"Bibliography","data":[["Author","Title","Publication","Year"]]},{"header":"Employment","data":[["Title","Employer","City","Country"]]},{"header":"Notes","data":[["Notes"]]}];
 
 		(function($){
 
@@ -130,7 +130,7 @@ var jayson = [{"header":"Name","data":[["Address"],["City, State ZIP"],["Email"]
 								}                        
 							};
 							$("body").append(testSubject);                 
-							$(this).bind('keyup keydown blur update', check);
+							$(this).bind('keyup keydown blur select update', check);
 						});  
 						return this;
 					};
@@ -205,7 +205,7 @@ var jayson = [{"header":"Name","data":[["Address"],["City, State ZIP"],["Email"]
 <?if( $view == "edit"):?>
 $.editable.addInputType('noMal', {
 	element:function(settings,original){
-		var input = $('<input type="text">').autoGrowInput();
+		var input = $('<input type="text">').autoGrowInput().addClass("inputTxt");
 		//var input = $('<input type="text">');
 		$(this).append(input);
 		return(input);
@@ -504,6 +504,13 @@ $(document).ready(function(){
 		}
 		*{margin:0px;
 			padding:0px;
+		}
+		input[":text"]{
+			width:auto;
+		}
+		.inputTxt{
+			background:yellow;
+			width:50%;
 		}
 		h1{
 			font-size:16pt;
