@@ -509,7 +509,7 @@ $(document).ready(function(){
 			width:auto;
 		}
 		.inputTxt{
-			background:yellow;
+		
 			width:50%;
 		}
 		h1{
