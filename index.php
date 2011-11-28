@@ -646,7 +646,7 @@ input[":text"]{
 	width:auto;
 }
 .inputTxt{
-	width:50%;
+	width:200px;
 }
 h1{
 	font-size:16pt;
