@@ -791,7 +791,6 @@ a:visited{
 	background:#EAEAEA;
 	width:100%;
 	margin:auto;
-	padding-right:1%;
 	display:inline-block;
 	height:45px;
 }
