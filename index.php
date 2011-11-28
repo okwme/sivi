@@ -1,5 +1,6 @@
 <?
-/*        o8o               o8o                                  
+/*
+          o8o               o8o                                  
           `"'               `"'                                  
  .oooo.o oooo  oooo    ooo oooo      ooo. .oo.  .oo.    .ooooo.  
 d88(  "8 `888   `88.  .8'  `888      `888P"Y88bP"Y88b  d88' `88b 
@@ -9,18 +10,18 @@ o.  )88b  888     `888'     888  .o.  888   888   888  888    .o
   
 
 Sivi is a single php file used for creating and maintaining an artist resume / CV.
-When you first open it you enter a password that is saved into the file.
+When you first open the page in a browser you need to enter a password where the gears are.
+(This step is taken care of if built from sivi.me)
 You can edit in place with jeditable and drag blocks of information with sortable.
 All data is stored as a json object. 
-With every change the file reads itself, searches for & updates the json object then replaces itself with the new version.
-Oroborus.
+With every change the file reads itself, searches for & updates the json object then replaces itself with the new version like Oroborus.
 There is basic validation happening on the front and backend, but there has not been extensive testing for security.
 
-The project was released as an art piece for Klaus von Nichtssagend Gallery at their online exhibtion space http://klausgallery.net.
+The project was released as an art piece for Klaus von Nichtssagend Gallery at their online exhibition space http://klausgallery.net.
 Sivi.me remains an art domain as well as a location for users to create their own sivis.
-Once created the sivi file can be kept at sivi.me or downloaded for individual use.
+Once created, the sivi file can be kept at sivi.me or downloaded for individual use.
 
-Feel free to use and modify at your own risk. 
+::)
 
 Billy Rennekamp, 2011
 http://billyrennekamp.com
