@@ -1,0 +1,46 @@
+          o8o               o8o                                  
+          `"'               `"'                                  
+ .oooo.o oooo  oooo    ooo oooo      ooo. .oo.  .oo.    .ooooo.  
+d88(  "8 `888   `88.  .8'  `888      `888P"Y88bP"Y88b  d88' `88b 
+`"Y88b.   888    `88..8'    888       888   888   888  888ooo888 
+o.  )88b  888     `888'     888  .o.  888   888   888  888    .o 
+8""888P' o888o     `8'     o888o Y8P o888o o888o o888o `Y8bod8P' 
+  
+
+Sivi is a single php file used for creating and maintaining an artist resume / CV.
+When you first open it you enter a password that is saved into the file.
+You can edit in place with jeditable and drag blocks of information with sortable.
+All data is stored as a json object. 
+With every change the file reads itself, searches for & updates the json object then replaces itself with the new version.
+Oroborus.
+There is basic validation happening on the front and backend, but there has not been extensive testing for security.
+
+The project was released as an art piece for Klaus von Nichtssagend Gallery at their online exhibtion space http://klausgallery.net.
+Sivi.me remains an art domain as well as location for users to create their own sivis.
+Once created the sivi file can be kept there or downloaded for individual use.
+
+Feel free to use and modify at your own risk. 
+
+Billy Rennekamp, 2011
+http://billyrennekamp.com
+
+
+Copyright (C) 2011 by Billy Rennekamp
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.

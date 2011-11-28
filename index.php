@@ -634,6 +634,10 @@ var gearSide;
 			width:auto;
 		}
 		.inputTxt{
+<<<<<<< HEAD
+=======
+		
+>>>>>>> 7cdfd5dbc179fb5f30ed2fa79b9b92b667f2ed24
 			width:50%;
 		}
 		h1{
