@@ -5,6 +5,7 @@ $drag = "iVBORw0KGgoAAAANSUhEUgAAAAYAAAAKCAQAAAA9B+e4AAAACXBIWXMAAAsTAAALEwEAmpw
 $gears = "iVBORw0KGgoAAAANSUhEUgAAABEAAAAoCAYAAAFvHyEJAAABc0lEQVRIx+2Vu0pDQRCGz0NYiCAasNAiKHiBECIkYhERG8EnU/gUbDyWXt7DwjSKErCwsdEUGrwnWZt/k3XPhughiJAUw87O/PvP7JyZPZExJrISJTaACW8SZzoKYADTUYIBeht1Phz4d5xpDMAi8CYp2HwmgXF7wSzwKcn1I+yP75gepJrO29pqnQMSoBZwB4wCNxbsg4ycI8BFN1DRC5f/BvrjEgwAQGWe0BoDx9KngDagLjGSR/V7G5CTYxNYk75iATUZngWOHLaaNSzLsAoUpJfdEPeKaXN4BZ5cwLTWA+BIehYYlK/Zt+4fkqQkcfrblz117WE3jE8yBlTU4nlgFjgXySWwoF/PA3ANZEIkEVACPpy5aWkSm46tqbFNZLIN7ANnDnjLS73s+CrC77gkMXDqPPsG2PBISo7vCjgB4tB1loAXL/U60HBsDREGC5sBqsA7sK6Hx2ZW1bNVVOFvgZluhfVlVyRxz088nJ1/SvIFJGxMewwj+XUAAAAASUVORK5CYII=";
 $x = "iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzdFQ0RFMzZEMTdEMTFFMEIwNzJBMzg5RjQxMTQyNjEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzdFQ0RFMzdEMTdEMTFFMEIwNzJBMzg5RjQxMTQyNjEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpFM0VDNzE2OUQxN0MxMUUwQjA3MkEzODlGNDExNDI2MSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpFM0VDNzE2QUQxN0MxMUUwQjA3MkEzODlGNDExNDI2MSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pk6j2R0AAAB/SURBVHjaYkxLS9vPwMCwcNasWQuANAOQLwCk5gPxRhYgAeYABUFyG4AYpNgApIEJSDgC8QWo6vNQiUSgSRsYoUYpAKn7DBCwACiRCGIwQ+3YDsQSQPwAiB2MjY0fnj179gITkh0g1YYwK4CaAkCSH6B2gIz7AHUDyGECAAEGACoZKiO+Ukh+AAAAAElFTkSuQmCC";
 $link = "R0lGODlhEAAQAIABACBRZv///yH5BAEAAAEALAAAAAAQABAAAAIgjI+py+0GIngwKjkDvkhqXmWLaDXicXbgijLYRsVyXAAAOw==";
+$ico = "AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASnwAAMqkAAEKuAwDNaRUAvnVAAKWSdgBPqpkAV4mcAFWJnQBojp0Aao6dAG2ToQB4mKQAZZKlAEOLqABLjqgAUI6oAFeQqACOoKgAjKGoAGKUqQCNoakAkaKpAFSyqwCTpawAWpewAGqcsABxzrEANo2zAJOqswClsLQAMI23AImpuABno7oAKo67AIKsvACbsrwAj7W8AKC1vACBrr0AgK+9AIS0vQCMtr0Apre9AFyhvgCxu74AXLO/AKa7vwCyu78An7+/AKu5wACvvMEArL7BADmZwwCDvMMARaHFADibxgA6m8YAPKHGALbFxgA5nccAsMLHADmcyADBxsgARaXJAD2hygDCyMoAO6DLAMLJywBxzMsAN5/MAD2hzAA+pMwAPqPNAMXKzQAnns4AO6LPAE6q0ABsstAAfbbQAEeo0QAXd9IAQqrSAM7R0gBCqtMArMXTAEOr1QDQ09UA0tTVAHHJ1gAspdcA1tjZADKN2gBsutoAQq/bAEy12wBdt9sASbLcANvc3ABHs90AYrfeAFu53gDb3t4ATaLfAGC63wBrwd8AZLzhAGy94QBmvuEAdczjAJnN4wDh4+MAw9nkAACx5QBrw+UAVMTlAGnF5QDj5OUAUbznAKzX5wDo6OgAbMPpAG/S6QDo6ekAHZPqAOrq6gAAfusAes7sAD/J7QBizO8A7+/vADya8gAAuvQA9PT0AADD9QB4zvUA9fX1APb29gD39/cAS9j4APn5+QD7+/sA/v7+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABYFgoHCBKOAAAAAAAAAGIJHDk+PkwUjgAAAAAAAFMOSUE4PD41SgAAAAAAAIgRWktGSEdDOgsYFRMefQA/X4aEcVBSIh9UGR03VhB4MGhzgHZkYE1VTg8MQF5hLVtday4GF2psbnBlLA0aY0KOIG0CAAFpcnR3PQQDBSGKAIIjRRtZeVxRZ3o2MShmAAAAjTJPf4eDfnyBiyd7AAAAAAAAjFczJiQrRC8pAAAAAAAAAAAAAAAAAAAAJTQAAAAAAAAAAAAAAAAAAIUqdQAAAAAAAAAAAAAAAAAAbzuOAAAAAAAAAAAAAAAAAACJjv//AADwHwAAwB8AAIA/AAAAAQAAAAAAAAAAAAAAAAAAAAAAAIABAADAAwAA8AcAAP/zAAD/8QAA//gAAP/8AAA=";
 
 $pw = "";
 $Background = "#F5FCCB";
@@ -16,14 +17,15 @@ if(($_REQUEST['pw']==$pw) || $_SESSION['pw']==$pw){
 	$view = $_REQUEST['view'];
 }
 $view = $view == "" ? "view" : $view;
-if($view == "edit" && $pw == ""){
+
+if($_REQUEST['view'] == "edit" && $pw == "" && $_REQUEST['pw'] != ""){
 	$pass = true;	
 	$filename = "index.php";
 	$current = file_get_contents($filename);
 	$_SESSION['pw'] = $_REQUEST['pw'];
 	//replace old info with new info and save file
-	$current = str_replace("\$pw = \"\";", "\$pw = \"".addslashes(stripslashes($_REQUEST['pw']))."\";", $current); 
-	file_put_contents($filename, $current);
+	$current2 = str_replace("\$pw = \"\";", "\$pw = \"".addslashes(stripslashes($_REQUEST['pw']))."\";", $current); 
+	file_put_contents($filename, $current2);
 }
 if(($_REQUEST['id']!="") && $pass):
 	$filename = "index.php";
@@ -84,10 +86,14 @@ header('Content-type: text/html; charset=utf-8');?><!DOCTYPE html PUBLIC "-//W3C
 <html>
 <head>
 <title class="name"></title>
+<link href="data:image/x-icon;base64,<?echo$ico;?>" type="image/x-icon" rel="icon" />
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+<script src="http://sivi.me/iphone-style-checkboxes.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="http://sivi.me/iphoneSwitches.css" />
+
 <script>
-var jayson = [{"header":"Instructions","data":[["Click the gear icon in the top right corner."],["Enter a password to create one."],["Once in edit mode, click on a word to edit it."],["Click \"x\" or \"-\" to delete a field or a row or a whole block."],["Click \"+\" to add a field or row (++ to add a block)"],["Drag rows or blocks with the three vertical dots."],["Click the font or hexadecimal color code to change either."],["(Optional)"],["Click the download icon in the top right corner to download your sivi."],["Upload your index.php file to your server with permissions set to 777."]]},{"header":"Name","data":[["Address"],["City, State ZIP"],["Email"],["<a href=\"\" target=\"_blank\">website<\/a>"]]},{"header":"Education","data":[["Degree","Year","Major","Institution"]]},{"header":"Grants & Awards","data":[["Year","Title"]]},{"header":"Solo & Partner Shows","data":[["Year","Title","Location","City","Country"]]},{"header":"Group Shows","data":[["Year","Title","Location","City","Country"]]},{"header":"Books & Publications","data":[["Year","Title","Publisher","City","Country"]]},{"header":"Bibliography","data":[["Author","Title","Publication","Year"]]},{"header":"Employment","data":[["Title","Employer","City","Country"]]},{"header":"Notes","data":[["Notes"]]}];
+var jayson = [{"header":"Instructions","data":[["Click the gear icon in the top right corner."],["Enter your password and hit return."],["Once in edit mode, click on a word to edit it."],["Click \"x\" or \"-\" to delete a field or a row or a whole block."],["Click \"+\" to add a field or row (++ to add a block)"],["Drag rows or blocks with the three vertical dots."],["Click the font or hexadecimal color code to change either."],["(Optional)"],["Click the download icon in the top right corner to download your sivi."],["Upload your index.php file to your server with permissions set to 777."]]},{"header":"Name","data":[["Address"],["City, State ZIP"],["Email"],["<a href=\"\" target=\"_blank\">website<\/a>"]]},{"header":"Education","data":[["Degree","Year","Major","Institution"]]},{"header":"Grants & Awards","data":[["Year","Title"]]},{"header":"Solo & Partner Shows","data":[["Year","Title","Location","City","Country"]]},{"header":"Group Shows","data":[["Year","Title","Location","City","Country"]]},{"header":"Books & Publications","data":[["Year","Title","Publisher","City","Country"]]},{"header":"Bibliography","data":[["Author","Title","Publication","Year"]]},{"header":"Employment","data":[["Title","Employer","City","Country"]]},{"header":"Notes","data":[["Notes"]]}];
 
 		(function($){
 
@@ -241,7 +247,6 @@ function update(callbackFnk){
 		});
 	});
 	$.post("index.php", {newJSON:newJayson}, function(data){
-		console.log(data);
 	});
 	jayson = newJayson;	
 	if(typeof callbackFnk == 'function'){
@@ -278,7 +283,7 @@ $(vvvv.data).each(function(k,v){
 		//new field button
 		addB = addButton();
 		//delete whole line
-		delB = $("<button>").html("-").click(function(){
+		delB = $("<button>").addClass("but").html("-").click(function(){
 			$(this).parent().hide("slow", function(){
 				$(this).remove();
 				update();
@@ -289,7 +294,7 @@ $(vvvv.data).each(function(k,v){
 		hDiv.append(iDiv);	
 	});
 	var addRow = addRowFnk();
-	delDiv = $("<button>").html("-").click(function(){
+	delDiv = $("<button>").addClass("but").html("-").click(function(){
 		if(confirm("Delete the whole block?")){
 		$(this).parent().fadeOut("slow", function(){
 			$(this).remove();
@@ -300,7 +305,7 @@ $(vvvv.data).each(function(k,v){
 	hDiv.append(delDiv);
 	$(sivi).append(hDiv);
 });
-addNewBlock = $("<button>").html("++").click(function(){
+addNewBlock = $("<button>").addClass("but").html("++").click(function(){
 var hDiv = $("<ul>").attr("id", "NEW").sortable({
 	handle:".handle",
 	items:"li:not(a)",
@@ -311,7 +316,7 @@ hHead = addHead("NEW");
 hDiv.prepend($("<img>").css("cursor","move").attr("src","data:image/png;base64,<?echo$drag;?>").addClass("bigHandle"));
 hDiv.append(hHead);
 var addRow = addRowFnk();
-delDiv = $("<button>").html("-").click(function(){
+delDiv = $("<button>").addClass("but").html("-").click(function(){
 	if(confirm("Delete the whole block?")){
 	$(this).parent().fadeOut("slow", function(){
 		$(this).remove();
@@ -358,7 +363,7 @@ addFspan = function(id){
 	});
 }
 addRowFnk = function(){
-	return $("<button>").html("+").click(function(){
+	return $("<button>").addClass("but").html("+").click(function(){
 		var num = $(this).parent().children("li").length;
 		var iDiv = $("<li>").attr("id", num);
 		iDiv.append($("<img>").addClass("handle").css("cursor","move").attr("src","data:image/png;base64,<?echo$drag;?>"));
@@ -368,7 +373,7 @@ addRowFnk = function(){
 		var nuDiv = $("<span>").append(fSpan).append(xImg);
 		addB = addButton();
 		//delete whole line
-		delB = $("<button>").html("-").click(function(){
+		delB = $("<button>").addClass("but").html("-").click(function(){
 			$(this).parent().hide("slow", function(){
 				$(this).remove();
 				update();
@@ -382,7 +387,7 @@ addRowFnk = function(){
 	});
 }
 addButton = function(){
-	return $("<button>").html("+").click(function(){	
+	return $("<button>").addClass("but").html("+").click(function(){	
 		var num;
 		num = $(this).siblings().length - 1;
 		var fSpan = addFspan(num);
@@ -447,11 +452,86 @@ $(document).ready(function(){
 		//return false;	
 		}
 <?else:?>
-		console.log("EDIT");
-		refresh();
+var gearSide;
 
+
+		$("<span>")
+		.addClass("viewEdit")
+		.addClass("onChange")
+		.append($("<input>").attr("type", "checkbox").attr("checked","checked").addClass("onChange"))
+		.appendTo(".header");
+		$(".onChange :checkbox").iphoneStyle({
+		resizeHandle:      true,
+	//	resizeContainer:   true,
+		checkedLabel: 'Edit', 
+		uncheckedLabel: 'View',
+	    onChange: function(elem, value) { 
+		//console.log(value);
+			if(!value){
+				plainPrint();
+				$(".header").hover(function(){
+					$(".header").animate({top:'0'},100);
+				},
+				function(){
+					$(".header").animate({top:'-45'},100);
+				}).delay(500).animate({top:"-45"},200);
+				gearSide = $(".right").html();
+				$(".right").html("");
+			}
+			else{
+					refresh();
+					$(".header").unbind('mouseenter').unbind('mouseleave');
+					$(".right").html(gearSide);
+					$('#Font').editable(function(value, settings) { 
+						$.post("index.php", { id: "Font", value:value, view:"ajax" }, function(v){});
+						$("body").css("font-family",value);
+						return value;
+					},
+					{	
+						type:"noMal",
+						placeholder:"Enter Font",
+						indicator:"saving...",
+						style:"inherit",
+
+					});
+					$('#Background').editable(function(value, settings) { 
+						$.post("index.php", { id: "Background", value:value, view:"edit" , pw: "<?echo$pw;?>"}, function(v){
+						});
+						$(".content").css("background",value);
+						$("#Background").css("color",value);
+						return value;
+					},
+					{
+						placeholder:"Enter Background",
+						indicator:"saving...",
+						style:"inherit"
+					});
+				
+			
+				}
+		}
+	});
+/*	
+	$("button").click( function(){
+			if($(this).html() == "VIEW"){
+				$(this).html("EDIT");
+				plainPrint();
+				$(".header").hover(function(){
+					$(".header").animate({top:'0'},100);
+				},
+				function(){
+					$(".header").animate({top:'-45'},100);
+				}).delay(500).animate({top:"-45"},200);
+				gearSide = $(".right").html();
+				$(".right").html("");
+			}
+			else{
+				$(this).html("VIEW");
+				refresh();	
+				$(".header").unbind('mouseenter').unbind('mouseleave');
+				$(".right").html(gearSide);
 		$('#Font').editable(function(value, settings) { 
-			$.post("index.php", { id: "Font", value:value, view:"ajax" }, function(v){console.log(v);});
+			$.post("index.php", { id: "Font", value:value, view:"ajax" }, function(v){});
 			$("body").css("font-family",value);
 			return value;
 		},
@@ -464,7 +544,35 @@ $(document).ready(function(){
 		});
 		$('#Background').editable(function(value, settings) { 
 			$.post("index.php", { id: "Background", value:value, view:"edit" , pw: "<?echo$pw;?>"}, function(v){
-				console.log(v);
+			});
+			$(".content").css("background",value);
+			$("#Background").css("color",value);
+			return value;
+		},
+		{
+			placeholder:"Enter Background",
+			indicator:"saving...",
+			style:"inherit"
+		});
+			}
+		}).appendTo(".header");
+		*/
+		refresh();
+
+		$('#Font').editable(function(value, settings) { 
+			$.post("index.php", { id: "Font", value:value, view:"ajax" }, function(v){});
+			$("body").css("font-family",value);
+			return value;
+		},
+		{	
+			type:"noMal",
+			placeholder:"Enter Font",
+			indicator:"saving...",
+			style:"inherit",
+
+		});
+		$('#Background').editable(function(value, settings) { 
+			$.post("index.php", { id: "Background", value:value, view:"edit" , pw: "<?echo$pw;?>"}, function(v){
 			});
 			$(".content").css("background",value);
 			$("#Background").css("color",value);
@@ -505,11 +613,27 @@ $(document).ready(function(){
 		*{margin:0px;
 			padding:0px;
 		}
+		.viewEdit{
+			
+			//font-family:"helvetica nueu", helvetica, arial;
+			//-moz-border-radius: 10px; /* Firefox */
+			//-webkit-border-radius: 10px; /* Safari, Chrome */
+			//border-radius: 10px; /* CSS3 */;  
+			//-moz-box-shadow: 2px 2px 2px #000;
+			//-webkit-box-shadow: 2px 2px 2px #000;
+			//box-shadow: 2px 2px 2px #000;  
+			//text-shadow: 0 1px 0 #ffffff;
+			position:absolute;
+			left:50%;
+			margin-left:-60px;
+			top:10px;
+			
+		}
+
 		input[":text"]{
 			width:auto;
 		}
 		.inputTxt{
-			background:yellow;
 			width:50%;
 		}
 		h1{
@@ -545,7 +669,7 @@ $(document).ready(function(){
 		body{
 			font-family:<?echo$Font;?>;
 		}
-		button {
+		.but {
 		   border: none;
 		   background:none;
 		   padding: 3px;
@@ -559,7 +683,7 @@ $(document).ready(function(){
 			cursor:pointer;
 		   }
 
-		button:active {
+		.but:active {
 			position:relative;
 			top:1px;
 		   border: none;
@@ -668,16 +792,17 @@ $(document).ready(function(){
 		<div class="header">
 			<div class="headerB">
 				<div class="headerC">
+										<span style="padding-left:10px;position:absolute; top:13px; left:100px;" class="fb-like"  data-send="false" data-layout="button_count" data-width="auto" data-show-faces="false"></span>
+
 					<span class="left">
-						<a id="infoButton" class="noImg" style="font-size:14pt; font-weight:bold; cursor:pointer;text-shadow: 0 1px 0 #ffffff;margin-left:20px;" href="">SIVI.ME</a>
-						<span style="padding-left:10px;" class="fb-like"  data-send="false" data-layout="button_count" data-width="auto" data-show-faces="false"></span>
+						<a id="infoButton" class="noImg" style="font-size:14pt; font-weight:bold; cursor:pointer;text-shadow: 0 1px 0 #ffffff;margin-left:20px;" href="http://sivi.me">SIVI.ME</a>
 					</span>
 					<span class="right">
 	<?if($view=="edit"):?>
 						<span class="background" name="Background" id="Background" style="color:<?echo$Background;?>"><?echo$Background;?></span>
 						<span class="font" name="Font" id="Font"><?echo$Font;?></span>
 	<?else:
-						$_SESSION['pw'] = "";
+	$_SESSION['pw'] = "";
 	endif;?>
 						<span id="gear"><a class="noImg" id="gearLink" href="javascript:gearClick();"><img id="gearImg" src='data:image/png;base64,<?echo$gears;?>'></a></span>
 	
