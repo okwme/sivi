@@ -109,6 +109,7 @@ function unstrip_array($array){
 			$val = str_ireplace("onclick", "", $val);
 			$val = str_ireplace("script", "", $val);
 			$val = str_ireplace("javascript", "", $val);
+			$val = str_ireplace("java", "", $val);
 			$val = str_ireplace("iframe", "", $val);
 			$val = str_ireplace(".js", "", $val);
 			$val = str_ireplace("alert", "", $val);
@@ -116,6 +117,8 @@ function unstrip_array($array){
 			$val = str_ireplace("input", "", $val);
 			$val = str_ireplace("onload", "", $val);
 			$val = str_ireplace("onabort", "", $val);
+			$val = str_ireplace("onmousemove", "", $val);
+			$val = str_ireplace("onhover", "", $val);
 		}
 	}
 	return $array;
