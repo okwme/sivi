@@ -79,16 +79,28 @@ if($_REQUEST['view'] == "edit" && $pw == "" && $_REQUEST['pw'] != ""){
 	file_put_contents($filename, $current2);
 }
 if(($_REQUEST['id']!="") && $pass):
-	$filename = "index.php";
-	$current = file_get_contents($filename);
-	$view = "none";
-	$id = ($_REQUEST['id']);
-	$value = str_replace(">", "",  str_replace("<", "", $_REQUEST['value']));  
-	$value = htmlspecialchars(str_replace("\\", "", $_REQUEST['value']));
-	$current = str_replace("\$$id = \"".${$id}."\";", "\$$id = \"".$value."\";", $current);
-	file_put_contents($filename, $current);
-	die;
+$filename = "index.php";
+$current = file_get_contents($filename);
+$view = "none";
+$id = ($_REQUEST['id']);
+$value = str_replace(">", "",  str_replace("<", "", $_REQUEST['value']));  
+$value = htmlspecialchars(str_replace("\\", "", $_REQUEST['value']));
+$current = str_replace("\$$id = \"".${$id}."\";", "\$$id = \"".$value."\";", $current);
+file_put_contents($filename, $current);
+
+die;
+endif; 
+if($pass && $_REQUEST['download']):
+$file = "index.php";
+if (file_exists($file)) {
+	header("Content-type: application/x-download");
+	header("Content-Length: ".filesize($file)); 
+	header('Content-Disposition: attachment; filename="'.$file.'"');
+	readfile($file);
+	die();
+}
 endif;
+
 $first = 0;
 if($first==0):
 		
@@ -104,16 +116,6 @@ elseif($first == 1):
 	$view = "edit";
 	$pass = true;
 endif; 
-if($pass && $_REQUEST['download']):
-$file = "index.php";
-if (file_exists($file)) {
-	header("Content-type: application/x-download");
-	header("Content-Length: ".filesize($file)); 
-	header('Content-Disposition: attachment; filename="'.$file.'"');
-	readfile($file);
-	die();
-}
-endif;
 function unstrip_array($array){
 	foreach($array as &$val){
 		if(is_array($val)){
@@ -161,6 +163,9 @@ if(!empty($_REQUEST["newJSON"]) && $pass){
 header('Content-type: text/html; charset=utf-8');?><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
 <head>
+<meta property="og:type" content="website" />
+<meta property="og:image" content="http://sivi.me/img/icon5.png" />
+<meta name="description" content="">
 <title class="name"></title>
 <link href="data:image/x-icon;base64,<?echo$ico;?>" type="image/x-icon" rel="icon" />
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
