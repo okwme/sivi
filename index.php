@@ -103,7 +103,7 @@ if (file_exists($file)) {
 }
 endif;
 function unstrip_array($array){
-	foreach($array as &$val){
+	foreach($array as $val){
 		if(is_array($val)){
 			$val = unstrip_array($val);
 		}else{
