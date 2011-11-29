@@ -91,8 +91,6 @@ file_put_contents($filename, $current);
 die;
 endif; 
 if($pass && $_REQUEST['download']):
-$file = str_replace('/', '', $_GET['download']);
-$file = str_replace('..', '', $file);
 $file = "index.php";
 if (file_exists($file)) {
 	header("Content-type: application/x-download");
@@ -103,7 +101,7 @@ if (file_exists($file)) {
 }
 endif;
 function unstrip_array($array){
-	foreach($array as $val){
+	foreach($array as &$val){
 		if(is_array($val)){
 			$val = unstrip_array($val);
 		}else{
