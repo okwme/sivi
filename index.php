@@ -106,6 +106,16 @@ function unstrip_array($array){
 			$val = unstrip_array($val);
 		}else{
 			$val = stripslashes($val);
+			$val = str_ireplace("onclick", "", $val);
+			$val = str_ireplace("script", "", $val);
+			$val = str_ireplace("javascript", "", $val);
+			$val = str_ireplace("iframe", "", $val);
+			$val = str_ireplace(".js", "", $val);
+			$val = str_ireplace("alert", "", $val);
+			$val = str_ireplace("xss", "", $val);
+			$val = str_ireplace("input", "", $val);
+			$val = str_ireplace("onload", "", $val);
+			$val = str_ireplace("onabort", "", $val);
 		}
 	}
 	return $array;
