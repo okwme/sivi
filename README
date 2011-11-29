@@ -14,7 +14,7 @@ You can edit in place with jeditable and drag blocks of information with sortabl
 All data is stored as a json object. 
 With every change the file reads itself, searches for & updates the json object then replaces itself with the new version like Oroborus.
 There is basic validation happening on the front and backend, but there has not been extensive testing for security.
-
+(PHP 5 >= 5.2.0)
 The project was released as an art piece for Klaus von Nichtssagend Gallery at their online exhibition space http://klausgallery.net.
 Sivi.me remains an art domain as well as a location for users to create their own sivis.
 Once created, the sivi file can be kept at sivi.me or downloaded for individual use.
