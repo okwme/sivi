@@ -79,16 +79,30 @@ if($_REQUEST['view'] == "edit" && $pw == "" && $_REQUEST['pw'] != ""){
 	file_put_contents($filename, $current2);
 }
 if(($_REQUEST['id']!="") && $pass):
-$filename = "index.php";
-$current = file_get_contents($filename);
-$view = "none";
-$id = ($_REQUEST['id']);
-$value = str_replace(">", "",  str_replace("<", "", $_REQUEST['value']));  
-$value = htmlspecialchars(str_replace("\\", "", $_REQUEST['value']));
-$current = str_replace("\$$id = \"".${$id}."\";", "\$$id = \"".$value."\";", $current);
-file_put_contents($filename, $current);
-
-die;
+	$filename = "index.php";
+	$current = file_get_contents($filename);
+	$view = "none";
+	$id = ($_REQUEST['id']);
+	$value = str_replace(">", "",  str_replace("<", "", $_REQUEST['value']));  
+	$value = htmlspecialchars(str_replace("\\", "", $_REQUEST['value']));
+	$current = str_replace("\$$id = \"".${$id}."\";", "\$$id = \"".$value."\";", $current);
+	file_put_contents($filename, $current);
+	die;
+endif;
+$first = 0;
+if($first==0):
+		
+	$filename = "index.php";
+	$current = file_get_contents($filename);
+	$current = str_replace("\$first = 0;", "\$first = 1;", $current);
+	file_put_contents($filename, $current);
+elseif($first == 1):
+	$filename = "index.php";
+	$current = file_get_contents($filename);
+	$current = str_replace("\$first = 1;", "\$first = 2;", $current);
+	file_put_contents($filename, $current);
+	$view = "edit";
+	$pass = true;
 endif; 
 if($pass && $_REQUEST['download']):
 $file = "index.php";
